@@ -1,0 +1,42 @@
+1、安装git
+命令行设置 
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+
+2、git初始化
+新建文件夹，切入文件夹
+git init
+
+3、添加文件到git库
+git add file
+git commit -m ‘添加注释，一般可以是总结做的事情’
+
+4、git log
+查看历史提交，方便回退
+
+5、git status
+告诉你工作区的当前状态
+
+6、 git diff 
+查看修改内容
+
+7、git reset --hard  版本id
+回退到某一个版本 
+
+8、git  reflog
+查看命令历史
+
+9、git rm file
+从版本库中删除一个文件
+注意：注意如果不提交，这次删除不会保存在git库中，想要保存需要提交commit。
+文件删除之后，通过checkout 找不回这个文件，如果想要找到这个文件采用回退命令。
+
+10、git checkout -- file
+从git库中获取一个文件版本替换工作区文件版本。
+
+工作区（work directory）、暂存区（stage）、master
+
+
+
+
+

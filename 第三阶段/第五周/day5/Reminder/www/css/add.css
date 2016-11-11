@@ -1,0 +1,31 @@
+nav a{
+    float: left;
+    padding-left: 1rem;
+}
+
+form{
+    width:90vw;
+    margin: 2rem auto;
+}
+label{
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+label+input{
+    line-height: 2rem;
+    display: inline-block;
+    width: calc(90vw - 4rem);
+}
+br+label{
+    vertical-align: top;
+}
+
+input[type=submit]{
+    padding: 1rem;
+    display: inline-block;
+    width: 90vw;
+}
+
+.error{
+    background-color: red;
+}

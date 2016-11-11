@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--定义标签内语言格式-->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <!--设置IE浏览器的兼容性，以最新的版本兼容当前的-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--对视扣得，宽 度为当前的设备的宽度；出事的缩放比例；最初的缩放比例为1，用户是否缩放，用户是否可以缩放，-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="">
+    <title></title>
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            margin-bottom: 0;
+        }
+
+        .m-1 {
+            background: #EEEEEE;
+        }
+
+        h3 {
+            margin: 15px 0;
+        }
+
+        .fa-search {
+            margin-right: 10px;
+        }
+
+        .btn-success,
+        .btn-warning {
+            margin: 15px 0;
+        }
+        .modal-footer .btn-success{
+            margin: 0;
+        }
+
+        .f-1 {
+            text-align: center;
+        }
+
+        .f-2 {
+            color: #888888;
+        }
+
+        .fa-pencil-square-o {
+            color: #286090;
+            font-weight: bold;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        .glyphicon-trash{
+            color: #286090;
+            font-weight: bold;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        .active th {
+            font-weight: normal;
+        }
+        .navbar-inverse{
+            border: 0;
+            border-radius: 0;
+        }
+        .btn{
+            float: right;
+
+        }
+    </style>
+</head>
+
+<body>
+<div class="wrapper">
+    <!--缩小的菜单按钮-->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <!--data-toggle:用于告诉js需要对按钮做什么动作
+                data-target：id名，指示要切换到哪一个元素。-->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" class="active">华北水利水电大学</a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="#">首页</a></li>
+                    <li class=""><a href="#">学院概况</a></li>
+                    <li class=""><a href="#">院系设置</a></li>
+                    <li class=""><a href="#">管理服务</a></li>
+                    <li class=""><a href="#">教育教学</a></li>
+                    <li class=""><a href="#">师资队伍</a></li>
+                    <li class=""><a href="#">招生就业</a></li>
+                    <li class=""><a href="#">合作交流</a></li>
+                    <li class=""><a href="#">文化建设</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            用户 <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">个人信息</a></li>
+                            <li><a href="#">密码修改</a></li>
+                            <li><a href="#">个人设置</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">信息查询</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">历史记录</a></li>
+                        </ul>
+                    </li>
+                    <li class=""><a href="#">退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="m-1">
+            <div class="container">
+                <h3>学生信息管理系统</h3></div>
+        </div>
+
+
+        <div class="container  table-responsive ">
+
+            <form class="form-horizontal" role="form">
+
+
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">学号</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control"  name="num" placeholder="请输入学号"required="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">姓名</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="name" pattern="^[0-9a-zA-Z\u4e00-\u9fa5]{2,16}$" placeholder="请输入姓名"required="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">性别</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="sex" placeholder="请输入性别"required="" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">联系电话</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control"  name="phone" placeholder="请输入联系电话"required="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">邮箱</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="email" placeholder="请输入邮箱"required="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                <label for="" class="col-sm-2 control-label">家庭地址</label>
+                <div class="col-sm-6">
+                    <input type="text" name="address" class="form-control" id="" placeholder="请输入家庭地址"required="">
+                </div>
+            </div>
+
+                <div class="form-group">
+                    <div class="bn-1 col-sm-8">
+                        <button type="submit" class="btn btn-success">提交信息</button>
+
+
+
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+    </main>
+</div>
+
+
+</div>
+</body>
+<!--注意两个的顺序-->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<!--<link rel="stylesheet" href="style.css">-->
+<script src="/script/login.js"></script>
+</html>

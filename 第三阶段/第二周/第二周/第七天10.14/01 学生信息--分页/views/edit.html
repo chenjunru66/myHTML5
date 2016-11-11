@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="范珍">
+    <title>{{title}}</title>
+</head>
+<body>
+<form action="/edit/{{id}}" method="post">
+    <input type="text" name="name" value="{{name}}" required pattern="[\u4e00-\u9fa5]{2,4}" placeholder="姓名"> <br>
+    <select name="age">
+        <option value="18" {{age==18? 'selected':''}}>18</option>
+        <option value="19" {{age==19? 'selected':''}}>19</option>
+        <option value="20" {{age==20? 'selected':''}}>20</option>
+        <option value="21" {{age==21? 'selected':''}}>21</option>
+        <option value="22" {{age==22? 'selected':''}}>22</option>
+        <option value="23" {{age==23? 'selected':''}}>23</option>
+        <option value="24" {{age==24? 'selected':''}}>24</option>
+        <option value="25" {{age==25? 'selected':''}}>25</option>
+    </select> <br>
+    <input type="tel" name="phone" value="{{phone}}" required placeholder="联系方式" pattern="^1[3-8]\d{9}$"> <br>
+    <input type="email" name="email" required value="{{email}}" placeholder="邮箱"> <br>
+    <textarea name="intro" cols="30" rows="10" placeholder="个人介绍" required>{{intro}}</textarea> <br>
+    <input type="submit" value="更新">
+</form>
+<script src="/js/jquery.min.js"></script>
+<script>
+//    $('form').submit(function(){
+//        location.href = '/'
+//    })
+</script>
+
+</body>
+</html>

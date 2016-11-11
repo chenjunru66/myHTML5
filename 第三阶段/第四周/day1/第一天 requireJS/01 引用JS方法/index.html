@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>引用JS方法</title>
+    <!--
+        浏览器端引入JS：
+        通过script标签引入
+            JS文件在加载的时候，会影响浏览器对当前页面内容的渲染，
+            加载顺序是自上到下(加载是有顺序的)
+            创建的变量的时候，是全局变量，在a.js创建，在c.js可以输出的;
+            全局变量和函数污染了当前的环境
+    -->
+    <!--<script src="a.js"></script>-->
+    <!--<script src="b.js"></script>-->
+    <!--<script src="c.js"></script>-->
+<!--
+    Jquery引入JS文件
+        $.getScript()　　　＝＝＝　异步加载，并不影响页面的渲染
+-->
+    <script src="jquery.js"></script>
+    <script>
+//        $.getScript('a.js',function(){
+//
+//        })
+        $.getScript('b.js', function(){
+
+        })
+        $.getScript('c.js', function(){
+
+        })
+    </script>
+</head>
+<body>
+<span>
+    这是网站页面内容
+</span>
+</body>
+</html>
+
+
+<!--　Ｎodejs加载JS文件 模块化　-->
+<!--
+    在Nodejs中，JS文件  ==== 模块
+    如果JS文件A想要使用另外一个文件b的内容
+    b需要导出A想要的东西  ---- 导出模块
+    A需要引入模块b
+    在Nodejs中，文件之间是分离的关系，作用域也是互相隔离的
+-->
+<!--
+    浏览器端模块化 RequireJS  遵循AMD规范
+        AMD  == Asynchronous model define  异步模块定义
+          Synchronous == 同步
+    1.异步加载JS，可以避免影响浏览器对 页面的渲染
+    2.避免出现全局变量，污染当前环境，防止命名冲突
+    3.减少引入JS文件的标签对，优化当前代码，防止代码繁多(当引入多个JS文件的时候，需要多对script标签，代码太丑了)
+
+-->

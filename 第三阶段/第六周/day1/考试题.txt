@@ -1,0 +1,247 @@
+﻿1、html常用的行标签、块标签有哪些？
+行元素：span、a、img、small、strong、b、del.....
+块元素：div、section、header、footer、nav、mian、article、h1-h6、p.....
+2、在做项目过程中使用语义化标签吗?如果使用，有什么好处？
+用，例如 article、header、footer、nav会经常使用。
+好处：1）结构清晰，便于理解和后期的修改维护  2）利于搜索引擎优化（SEO）
+3、定位常见方式有哪些？异同？
+position:absolute\relative\fixed 
+absolute:脱离文档流，不占文档空间，相对于定位父元素进行定位。
+relative：不脱离文档流，相对于自身原始位置的偏移。
+fixed：固定定位，脱离文档流，相对于浏览器窗口定位。常见操作 导航条、工具条、回到顶部按钮的固定定位。
+
+其他的布局方式：响应式布局。利用媒体查询实现不同设备不同屏幕下不同的css样式。
+		弹性布局
+		浮动
+		默认流式布局。
+
+4、如何清除浮动？
+1）浮动元素之后，添加标签，使用css样式clear:both.
+2)浮动元素添加after伪类，添加clear：both
+3）父元素中添加overflow：hidden。
+	
+5、html5新特性有哪些？
+1）语义化标签
+2）form表单新特性
+3）音视频
+4）websocket
+5）存储......
+
+6、input的type属性取值有哪些？
+text\password\number\file\email\tel\date\color\search\range\submit\reset...
+
+7、css中常见选择器有哪些？
+id\class\元素、伪类、后代、子选择器、相邻选择器、，、*....
+
+8、说说你对DOM、BOM的认识。
+DOM：文档对象模型，是一个树形结构，包含document以及document中各个节点元素。同时DOM中也提供了一系列操作标签节点、文本节点、属性节点等的API以及各种事件操作。
+不过实际开发中使用DOM原生API比较少，一般采用操作比较简单的jquery。
+
+BOM:浏览器对象模型，包含window、location、navigator等，提供了一系列与浏览器相关的操作。
+
+9、JS基本数据类型有哪些？
+undefined、null、number、boolean、string、object
+
+10、说说数组中map\reduce方法的作用。
+map：映射，数组中每个元素执行一项操作，得到一个新元素，最终得到一个新数组。新数组与原数组长度一致，元素一一映射。
+reduce：对数组中元素进行聚合操作，最终得到一个值。
+
+11、常见的存储方式有哪些？
+
+服务端：文件存储、数据库存储。一般用于存储大量的数据。
+浏览器端：cookie、localStorage、sesstionStorage.
+cookie:存储少量与用户身份验证相关的数据，不超过4K,会随着请求响应在客户端与服务端来回传递。
+sesstionStorage：会话存储，存储会话中使用到的数据，浏览器关闭，自动消失，不超过5M。
+localStorage：本地存储，浏览器关闭，不会消失，存储一些长期数据，不超过5M。
+
+
+12、说说你对less的认识。
+less:css的预处理语言；支持函数、变量、嵌套、混入等操作；
+使得设置样式更加的便捷。less文件可以通过命令行工具lessc转化为css文件使用；也可以直接引用，注意还需要引入less.js文件。一般在大型项目中会使用less。
+
+sass...
+
+13、说说你对this对象的认识。
+
+js中this对象的指向不是固定的。
+1）全局域中this代表的是window；
+2）方法调用中this代表的是调用方法的对象；
+3）在监听事件中this代表的是触发事件的标签元素；
+4）在构造函数中this代表的是new生成的对象；
+除此之外，this的指向也可以修改，使用原生api中call、apply、bind方法可以修改this指向；
+
+
+14、说说JS中变量的作用域。
+
+变量分为全局变量和局部变量；
+全局变量在任意位置都可以使用；
+局部变量在声明该变量的函数作用域中可以使用；
+
+函数外面想要使用函数内部的变量可以通过返回这个变量或者闭包实现。
+
+js是一门弱类型语言，声明变量使用var；
+从ES6开始可以使用关键字let和const声明变量。
+const：常量；一经赋值，后期无法修改；
+let:变量；与var的区别，let声明的变量是块级作用域，只能在离他最近的大括号中使用；而var声明的局部变量函数内均可使用；
+
+
+
+15、说说你对http协议、ajax的认识。
+
+http协议：超文本传输协议，是网络应用层的一个协议，基于tcp/ip协议；规定了网络上传输数据的格式；
+http协议特点:1）单向通信；是请求响应模式，只能由客户端主动发起请求，服务端被动的响应，不能颠倒过来；
+	     2）短连接：请求响应一旦结束，立即断开连接。
+请求：请求行、请求头、空行、请求体
+响应：响应行、响应头、空行、响应
+
+ajax:异步js和xml；ajax是用于网络操作；底层是对于XMLHttpRequest的封装，如果不支持xhr,有对应的兼容性操作；提供了$.ajax、$.get、$.post等方法。
+
+16、说说你对路由的认识。
+
+在传统的由多个页面构成的网站中不存在路由的需求，那时通过链接进行跳转（导航）就能满足需求，但是随着Ajax和移动互联网的发展，单页应用越来越多，在单页（通过1个URL打开一个页面）中模拟多页面切换没有问题，但问题时怎样构造出一个能够通过URL实现“页面切换”并且这个URL还要满足可链接、可收藏、可分享的特性就成了一个有难度的技术问题。现在成熟的解决方案是利用url中的hash fragment来的变化来触发“页面切换”，这种将url(hash fragment)与“页面”映射起来的机制被称为路由（Router）,路由中的关键技术是监听url(hash fragment)的变化，支持hashchange事件的浏览器很容易做到这一点，不支持hashchange事件的浏览器通常需要使用setInterval大概以100ms/次的频率轮询检查url的变化。很多应用框架都支持路由，如Backbone和Angular（除ngRouter外，还有uiRouter支持更强大的功能），另外还有很多支持路由功能的独立脚本库如：router.js、director.js等。
+
+
+17、说说你对模块化的认识。
+
+浏览器端js文件没有作用域隔离机制，很容易造成命名冲突。
+另外也没有提供js文件中加载其他文件的机制。
+为了避免命名冲突，就需要进行模块化。
+
+模块化可以通过requireJS实现。
+
+requireJS的作用:
+1)实现作用域隔离
+2)异步加载js文件
+3）可以通过js代码加载其他的css、text、html文件。
+
+
+
+18、说说你对promise的认识。
+
+在异步任务的操作中，一般是使用回调函数或者事件机制去使用任务的结果，执行后续操作。
+这样造成后果：1）只能在回调函数中使用上一步任务结果，其他地方无法使用 ；2）任务之间的依赖度比较高，逻辑不清晰；
+而promise就可以解决上述问题，promise中提供了三种状态pending、resolve、reject，一个任务完成只需要去修改状态；可以通过promise的then方法在任何位置使用任务的结果，进行下一步任务，解除任务的耦合，使得逻辑更加清晰直观。
+另外，promise中也提供了all、finish等便捷操作。
+
+promise、jquery中deferred、angular中$q;
+
+19、列举前端开发中常用的脚本库和框架以及简单介绍。
+
+jquery,jquery-cookie/fullscreen/color/lazyload,jquery-ui, jquery插件库
+bootstrap
+underscore
+layer.js
+animate.css
+arttemplate
+requireJS
+angular
+ionic
+
+20、display：none 与  visibility：hidden的区别。
+同：隐藏标签；
+异：display 的隐藏不占据文档空间，visibility占据文档空间。
+
+21、常见的事件有哪些？请一一列举。
+鼠标事件：click\dbClick\mouseover\mouseenter\mouseleave\mousein\mouseout...
+键盘事件：keydown\up\press...
+页面加载、卸载事件：load、unload、reload....
+form表单事件：submit、change、focus、blur、reset、select...
+
+自定义事件
+
+事件机制：捕获阶段、冒泡阶段
+
+22、常见的运算符有哪些？
+
++-*/...
+%、++、--、+=、-=、*=、/=、
+&&、||、！、==、===、！=
+：？、
+
+
+23、请用代码写出(今天是星期x)其中x表示当天是星期几,如果当天是星期一,输出应该是"今天是星期一"
+
+var now = new Date()
+var week = now.getDay()
+var array = ['日','一','二','三','四','五','六']
+console.log('今天是周' + array[week])
+// if(week==0){
+//     console.log('今天是周日')
+// }
+// if(week==1){
+//     console.log('今天是周一')
+// }
+// if(week==2){
+//     console.log('今天是周二')
+// }
+// if(week==3){
+//     console.log('今天是周三')
+// }
+// if(week==4){
+//     console.log('今天是周四')
+// }
+// if(week==5){
+//     console.log('今天是周五')
+// }
+// if(week==6){
+//     console.log('今天是周六')
+// }
+
+24、下面这段代码想要循环延时输出结果0 1 2 3 4,请问输出结果是否正确,如果不正确,请说明为什么,并修改循环内的代码使其输出正确结果。
+for (var i = 0; i < 5; ++i) {
+  setTimeout(function () {
+    console.log(i + ' ');
+  }, 100);
+}
+错误；当延迟到100毫秒开始输出的时候，i已经变为5了。
+// for (var i = 0; i < 5; ++i) {
+//     function test(num){
+//         setTimeout(function () {
+//             console.log(num + ' ')
+//         }, 100);
+//     }
+//     test(i)
+// }
+var i = 0 
+var timer = setInterval(function(){
+    console.log('----')
+    if(i < 5){
+         console.log(i)
+         i++
+    }
+    if(i==5){
+        clearInterval(timer)
+    }
+},100)
+
+25、现有一个字符串是一段html,需要显示在页面上.有个要求,需要给其中只包含一个img元素的p标签增加一个叫pic的class.请编写代码实现.可以使用jQuery。
+
+var html = '<section><p><img/></p><p><img /><img /></p><p><img/></p></section>'
+$('body').html(html)
+var ps = $('p')
+for(var i = 0 ;i <ps.length;i++){
+    console.log(ps[i])
+    console.log($(ps[i]))
+    if($(ps[i]).find('img').length == 1){
+        $(ps[i]).addClass('pic')
+    }
+}
+
+26、<img>的title和alt有什么区别。
+title:是把鼠标放在图片上时显示的文本。
+alt:是图片加载失败的提示问题。
+
+27、css sprite是什么,有什么优缺点。
+图片精灵
+
+优点：减少http请求的次数，节省流量；
+缺点：使用稍显麻烦，修改麻烦。
+
+28、函数内部arguments变量有哪些特性。
+
+arguments是函数的内部默认提供的一个局部变量；
+是一个对象，可以根据索引从对象中取出每一个实参；
+可以根据length属性获取参数的数目；
+可以根据callee方法获取函数名称；
+
+30、你觉得你的前端开发水平如何？

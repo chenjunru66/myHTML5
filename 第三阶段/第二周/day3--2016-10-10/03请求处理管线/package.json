@@ -1,0 +1,14 @@
+{
+  "name": "myexpress",
+  "version": "1.0.0",
+  "description": "这是我的express路由",
+  "main": "ser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "陈俊如",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

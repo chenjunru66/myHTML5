@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>插件的写法</title>
+</head>
+<body>
+<div></div>
+<section></section>
+<script src="jquery.js"></script>
+<script>
+//    console.log($())//object
+//    console.log($) //function jquery()
+//    console.log($.extend())//object
+//    console.log($.fn)//jquery 对象 有属性和方法
+
+//$.fn.swim = function(){
+//    console.log('111')
+//}
+//console.log($.fn)
+//$().swim()
+//
+////    console.log($.extend('a','b','c','d'))//d
+////$.extend() ==合并参数以及参数值（当参数名相同时合并）
+//    console.log($.extend({
+//        name:'sh',
+//        age:4
+//    },'a',100,[1,2,3]))//Object { 0: 1, 1: 2, 2: 3, name: "sh", age: 4 }
+//
+//console.log($.extend({
+//    names:'shere',
+//    ages:5
+//},{
+//    names:'cheng',
+//    ages:6,
+//    sex:'femail'
+//}))//names: "cheng", ages: 6, sex: "femail"
+
+
+        $.fn.myswim = function(options){
+            var defaults = {
+                width:200,
+                height:200,
+                background:'red'
+            }
+            var settings = $.extend(defaults,options)
+            console.log(settings)
+//    console.log($(this))//当前调用方法的jQuery对象
+            $(this).css(settings)
+        }
+
+
+$('div').myswim({
+    width:100,
+    height:100,
+    background:'#000',
+    transform:'rotate(30deg)'
+})
+$('section').myswim()
+</script>
+</body>
+</html>

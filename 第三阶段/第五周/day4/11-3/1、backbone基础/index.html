@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="范珍">
+        <title>backbone基础</title>
+        <style>
+            *{
+                margin:20px;
+            }
+            body{
+                background-color:red;
+            }
+            div{
+                background-color:green;
+            }
+            p{
+                background-color:blue;
+            }
+            ul{
+                background-color:yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <button>按钮</button>
+        <div>
+            <p>这是一个段落段落段落段落段落段落段落段落段落段落</p>
+            <ul>
+                <li>0000001</li>
+                <li>0000002</li>
+                <li>0000003</li>
+                <li>0000004</li>
+                <li>0000005</li>
+            </ul>
+        </div>
+    </body>
+</html>
+
+<!--arttemplate模板-->
+<script id="books" type="text/html">
+    {{each arr as item}}
+        <section>
+            <h3>{{item.name}}</h3>
+            <small>{{item.author}}</small><br>
+            <small>{{item.index}}</small>
+        </section>
+    {{/each}}
+</script>
+
+<script src="libs/template.js"></script>
+<script src="libs/underscore.js"></script>
+<script src="libs/jquery.js"></script>
+<script src="libs/backbone-min.js"></script>
+<script src="index.js"></script>

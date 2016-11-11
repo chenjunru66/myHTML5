@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>art-template</title>
+    <!--<script src="jquery.js"></script>-->
+    <!--<script src="template.js"></script>-->
+</head>
+<body>
+<article>
+    {{if bookss.length == 0}}
+    <h1>没有推荐的数目</h1>
+    {{else}}
+    {{each bookss as book ins}}
+    <p>{{book.name}}</p>
+    <p>{{book.price}}</p>
+    <p>{{book.teacher}}</p>
+    {{/each}}
+    {{/if}}
+</article>
+
+</body>
+</html>

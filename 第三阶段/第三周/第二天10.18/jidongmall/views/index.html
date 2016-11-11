@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京东商城</title>
+    <link rel="icon" href="/imgs/index.png">
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/all.css"/>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            height: 60px;
+            width: 100vw;
+            background: #D13844;
+            overflow: hidden;
+            padding: 5px ;
+            position: fixed;
+            z-index: 10;
+            top: 0;
+
+        }
+        header div{
+            float: left;
+        }
+        .logo{
+            height: 50px;
+            width: 75px;
+            padding: 5px 5px;
+            cursor: pointer;
+        }
+        .logo img {
+            width: 100%;
+            height: 100%;
+        }
+        .search{
+            margin: 10px 3px;
+        }
+        .search input{
+            width: 170px;
+            height: 30px;
+            border-radius: 8px;
+        }
+        .login{
+            float: right;
+            color: #ffffff;
+            margin-top: 5px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .login span{
+            display: inline-block;
+            padding: 8px;
+            font-size: 14px;
+        }
+        a{
+            text-decoration: none;
+            color: #ffffff;
+        }
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: relative;
+            margin-top: 60px;
+            width: 640px;
+            overflow: hidden;
+        }
+        .lunbo{
+            width: 8000px;
+             position: relative;
+            overflow: hidden;
+        }
+        .lunbo li{
+
+            width: 360px;
+            float: left;
+        }
+        .lunbo li img{
+            width: 360px;
+            height: 200px;
+        }
+        .count {
+            overflow: hidden;
+            position: absolute;
+            left: 100px;
+            bottom: 5px;
+        }
+
+        .count li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: red;
+            color: #fff;
+            margin-left: 5px;
+            text-align: center;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .current {
+            background: yellow !important;
+            color: black !important;
+        }
+        .main1 ul{
+            overflow: hidden;
+            padding: 10px ;
+        }
+        .main1 li{
+            float: left;
+            width: 16vw;
+            height: 60px;
+            margin: 5px;
+            text-align: center;
+        }
+        .main1 li img{
+            width: 100%;
+            height: 70%;
+        }
+        .main2{
+            width: 360px;
+
+        }
+        .main2 h3{
+            background: #EEEEEE;
+            padding: 10px;
+            margin: 10px 0 2px 0;
+            font-size: 20px;
+            overflow: hidden;
+        }
+        .fa-refresh{
+            display: inline-block;
+            font-size: 16px;
+            float: right;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        .main2 ul{
+            overflow: hidden;
+        }
+        .main2 li{
+            float: left;
+            width: 46vw;
+            margin: 0 8px 0 6px ;
+        }
+        .main2 img{
+            width: 100%;
+            height: 100px;
+
+        }
+        .add{
+            background: lightblue;
+            padding: 5px;
+        }
+        .main3 .thing{
+            overflow: hidden;
+        }
+        .main3 h3{
+            background: #EEEEEE;
+            padding: 10px ;
+            margin: 10px 0 2px 0;
+            font-size: 20px;
+        }
+        .main3  section{
+            width:100vw;
+            float: left;
+        }
+        .main3 .pic{
+            width: 100vw;
+            height: 200px;
+        }
+         .pic>img{
+             width: 100%;
+             height: 100%;
+            /*display: inline-block;*/
+             /*text-align: center;*/
+        }
+        .des p {
+            padding: 0 10px;
+            text-indent: 2em;
+        }
+        .des  strong{
+            font-size: 20px;
+            padding: 0 10px;
+            color: red;
+        }
+        .thing{
+            border: 1px solid #E4E3E5;
+            margin-top: 5px;
+            background: #EEEEEE;
+        }
+        .foot{
+            width: 100vw;
+            height: 50px;
+            margin-bottom: 48px;
+        }
+        .foot p{
+            text-align: center;
+            padding: 10px 0 0 0;
+            color: #928689;
+        }
+        footer{
+
+            padding: 15px;
+            font-size: 18px;
+            position: fixed;
+            z-index: 10;
+            bottom: 0;
+            background:#EEEEEE ;
+            width: 100vw;
+        }
+        footer div{
+            display: flex;
+            justify-content: space-between;
+        }
+         footer  span{
+            cursor: pointer;
+             color: #4B4B4D;
+        }
+
+        .slide{
+            width:350px; margin:10px auto; border:solid 1px #eee;
+        }
+        .slide h2{
+            margin:0; font-size:20px; line-height:40px; background:#eee; color:red; font-weight:normal; padding-left:15px;
+        }
+        .slide ul{
+            list-style:none; margin:0; padding:0;
+        }
+        .slide ul li{
+            margin:10px;  overflow: hidden; height:180px;
+        }
+        .imgbox{
+            position:relative;  width:700px; overflow: hidden;
+        }
+        .imgbox img{
+            float:left;
+            display: inline-block;
+            width: 350px;
+            height: 160px;
+        }
+        .tab{
+            position:relative; height:30px; width:100%; bottom:20px; overflow: hidden;
+        }
+        .tab p{
+            position:absolute; background:orange; color:#fff;
+            width:100%; line-height:30px; font-size:14px; padding-left:10px; margin:0;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <div class="logo">
+            <a href="/"> <img src="imgs/jd.png" alt=""/></a>
+
+        </div>
+        <div class="search">
+            <form action="">
+                <input type="text"placeholder="请输入查询信息"/>
+            </form>
+        </div>
+        <div class="login">
+           <span>登录</span>
+        </div>
+    </header>
+<div class="banner">
+    <div class="box">
+        <ul class="lunbo">
+            <li><a href=""><img src="imgs/1.jpg" alt=""/></a></li>
+            <li><a href=""><img src="imgs/2.jpg" alt=""/></a></li>
+            <li><a href=""><img src="imgs/3.jpg" alt=""/></a></li>
+            <li><a href=""><img src="imgs/4.jpg" alt=""/></a></li>
+            <li><a href=""><img src="imgs/5.jpg" alt=""/></a></li>
+            <li><a href=""><img src="imgs/6.jpg" alt=""/></a></li>
+        </ul>
+        <ul class="count">
+            <li class="a">1</li>
+            <li class="a">2</li>
+            <li class="a">3</li>
+            <li class="a">4</li>
+            <li class="a">5</li>
+            <li class="a">6</li>
+        </ul>
+    </div>
+</div>
+
+    <div class="main1">
+        <ul>
+            <li> <a href=""><img src="imgs/01.png" alt=""/></a> <span>京东超市</span></li>
+            <li> <a href=""><img src="imgs/02.png" alt=""/></a><span>京东服装</span></li>
+            <li> <a href=""><img src="imgs/03.png" alt=""/></a><span>京东生鲜</span></li>
+            <li> <a href=""><img src="imgs/04.png" alt=""/></a><span>充值中心</span></li>
+            <li> <a href=""><img src="imgs/05.png" alt=""/></a><span>全球购</span></li>
+            <li> <a href=""><img src="imgs/05.png" alt=""/></a><span>全球购</span></li>
+            <li> <a href=""><img src="imgs/04.png" alt=""/></a><span>充值中心</span></li>
+            <li> <a href=""><img src="imgs/03.png" alt=""/></a><span>京东生鲜</span></li>
+            <li> <a href=""><img src="imgs/02.png" alt=""/></a><span>京东服装</span></li>
+            <li> <a href=""><img src="imgs/01.png" alt=""/></a><span>京东超市</span></li>
+        </ul>
+    </div>
+
+    <div class="main2">
+       <h3>今日推荐 <span class="fa fa-refresh">换一批</span></h3>
+        <ul>
+            <li><a href=""><img src="imgs/7.jpg" alt=""/></a></li>
+            <li><a href=""><img src="imgs/8.jpg" alt=""/></a></li>
+            <li><a href=""><img src="imgs/10.jpg" alt=""/></a></li>
+            <li><a href=""><img src="imgs/11.jpg" alt=""/></a></li>
+            <li><a href=""><img src="imgs/12.jpg" alt=""/></a></li>
+            <li><a href=""><img src="imgs/13.jpg" alt=""/></a></li>
+        </ul>
+    </div>
+
+    <div class="slide">
+        <h2> 专题推荐 </h2>
+        <ul class="list">
+            <li>
+                <div class="imgbox">
+                    <img src="imgs/1.jpg" alt="">
+                    <img src="imgs/2.jpg" alt="">
+                </div>
+                <div class="tab orange">
+                    <!--<div>-->
+                    <p> 潮宝自在游--裤搭好礼送 </p>
+                    <p style="top:30px;"> AMINO/补水盛宴 </p>
+                    <!--</div>-->
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main3">
+        <h3>爱生活</h3>
+        <button type="button"onclick="location.href='add.html'" class="guanli">添加商品</button>
+        <div class="product">
+            {{each datas as data index}}
+            <form action="/user/indexcart" method="post">
+                <div class="thing">
+                    <section class="pic"><img src="uploads/{{data.proname}}.jpg" alt=""/></section>
+                    <section class="des">
+                        <p>{{data.miaoshu}}</p>
+                        <strong>￥{{data.price}}</strong>
+                        <input  class="yonghu select"type="checkbox" value='{{data.proname}}'name="proname"/>
+                    </section>
+                    <section><button  class="yonghu "type="submit">加入购物车</button><button type="button" uid="{{data.id}}"class="guanli delete">删除</button>
+                    <button onclick="location.href='/update/{{data.id}}'"type="button" class="guanli">修改</button></section>
+                </div>
+
+            </form>
+            {{/each}}
+        </div>
+
+    </div>
+
+    <div class="foot">
+        <p>Copyright © 2004-2016 京东JD.com 版权所有
+        </p>
+
+    </div>
+
+   <footer>
+<div>
+   <span class="fa fa-home"><span class="zi">首页</span></span>
+   <span class="fa fa-file"><span class="zi">分类</span></span>
+   <span class="fa fa-shopping-cart"><span class="zi">购物车</span></span>
+   <span class="fa fa-user"><span class="zi">我的</span></span>
+</div>
+   </footer>
+
+
+</div>
+</body>
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery.cookie.js"></script>
+<script src="/scripts/lunbo.js"></script>
+<script src="/scripts/index.js"></script>
+</html>

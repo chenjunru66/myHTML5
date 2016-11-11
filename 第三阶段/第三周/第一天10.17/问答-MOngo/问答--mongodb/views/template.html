@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> 问答系统首页 </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        .main{
+            overflow: hidden;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .main-left{
+            float: left;
+        }
+        .main img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: solid 5px #eee;
+            /*width: 100%;*/
+        }
+        .main-right{
+            float: left;
+            margin-right: 100px;
+        }
+        .main h4{
+            font-weight: bold;
+        }
+        .main>div p:last-of-type{
+            color: #666;
+        }
+        .answer{
+            overflow: hidden;
+        }
+        .ans-left{
+            /*width: 100px;*/
+            /*height: 100px;*/
+            /*border-radius: 50%;*/
+            /*border: solid 5px #eee;*/
+            float: right;
+        }
+        .ans-right{
+            float: right;
+        }
+        .answer img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: solid 5px #eee;
+            /*width: 100%;*/
+        }
+        .questions{
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container dropdown">
+        <a class="navbar-brand" href="/">智游教育</a>
+        <div class="navbar-text pull-right text-right">
+            <span id="ask" ><span class="glyphicon glyphicon-plus"></span> 提问</span>&#x3000;
+            <span id="user" class="dropdown-toggle" data-toggle="dropdown" >
+                <span class="glyphicon glyphicon-user"></span>
+                <span>登录</span>
+            </span>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li><a class="text-right" href="user.html">个人资料</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a class="text-right">退出</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container questions">
+    <section>
+        {{each datas as asks index}}
+        <div class="main">
+            <div class="main-left">
+                <img src="uploads/{{asks.username}}.jpg" alt=""/>
+            </div>
+            <div class="main-right" question="{{asks.id}}">
+                <h4> {{asks.createUser.username}} </h4>
+                <p> {{asks.content}} </p>
+                <p> {{asks.createTime | dateFormate }} </p>
+            </div>
+        </div>
+        {{if asks.answers}}
+            {{each asks.answers as ans index}}
+                <div class="answer">
+                    <div class="ans-left">
+                        <img src="uploads/{{ans.username}}.jpg" alt=""/>
+                    </div>
+                    <div class="ans-right">
+                        <h4> {{ans.username}} </h4>
+                        <p> {{ans.content}} </p>
+                        <p> {{ans.time | dateFormate }} </p>
+                    </div>
+                </div>
+            {{/each}}
+        {{/if}}
+        {{/each}}
+    </section>
+</div>
+</body>
+<script>
+    console.log($.cookie())
+    var username = $.cookie('username')
+    if( username ){
+        $("#user").find('span').last().text(username)
+    } else {
+        $("#user").removeAttr('data-toggle').find('span').last().click(function () {
+            location.href = 'login.html'
+        })
+    }
+    $('.dropdown-menu li').last().click(function () {
+        $.get('/user/signout',null, function (res) {
+            if( res.code == 'success'){
+                location.href = '/'
+            }
+        })
+    })
+    //如果存在登录用户名，可跳转到提问页面，否则，跳转到登录页面
+    $("#ask").click(function () {
+        if( username ){
+            location.href = 'ask.html'
+        } else {
+            location.href = 'login.html'
+        }
+    })
+    // 点击问题区域，可跳转到回答页面，若未登录，则跳转到登录页面
+    $(".main-right").click(function () {
+        if( username ){ 
+            // 获取属性值  -- id值
+            
+            var id = $(this).attr("question")
+            $.cookie('ids', id)
+            location.href = '/ans/' + id
+        } else {
+            location.href = 'login.html'
+        }
+    })
+    // 点击头像区域，可跳转到个人资料页面，若未登录，则跳转到登录页面
+    $(".main-left").click(function () {
+        if( username ){
+            location.href = 'user.html'
+        } else {
+            location.href = 'login.html'
+        }
+    })
+    
+    
+
+</script>
+</html>

@@ -1,0 +1,26 @@
+安装MongoDB注意事项：
+
+
+安装后进入C盘：/mongo,新建db和log文件夹
+           db：存放数据库的数据
+           log：存放日志文件
+
+
+数据库设置：C：/mongo/bin,进入bin文件夹
+   通过命令行执行启动mongo服务器
+    mongod --dbpath c:\mongo\db
+   
+ctrl + c 退出
+
+  双击打开mongo.exe，进入到mongodb服务器终端命令行，输入mongodb指令
+
+终端命令行：
+use local ：切换到某个数据库，local为数据库名
+
+db.createCollection('集合名词')   --创建新的集合
+
+db.集合名称.insert({name:value,name:value})  --插入数据
+
+db.集合名词.find()  ---查找所有的数据
+
+db.集合名称.find().pretty()    --格式化查找的数据

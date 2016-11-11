@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<h1> {{title}} </h1>
+<button type="button" onclick="location.href='add.html'"> 添加留言信息 </button>
+<table>
+    <tr>
+        <th> 姓名 </th>
+        <th> 年龄 </th>
+        <th> 联系方式 </th>
+        <th> 邮箱 </th>
+        <th> 操作 </th>
+    </tr>
+    {{each datas as data}}
+    <tr>
+        <td> {{data.name}} </td>
+        <td> {{data.age}} </td>
+        <td> {{data.phone}} </td>
+        <td> {{data.email}} </td>
+        <td>
+            <button type="button" onclick="location.href='/update/{{data.id}}'" > 更新 </button>
+            <button type="button" data-id="{{data.id}}" class="remove"> 删除 </button>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+<p>
+    <a href="/{{page>1?page-1:1}}"> 上一页 </a>
+    <!-- 如果page<pageTotal(总页数):page?pageTotal -->
+    <p class="num">
+    <!-- [pages]数组--显示：限制长度的页码 -->
+    {{each pages as page}}
+    <a href="/{{page}}">{{page}}</a>
+    {{/each}}
+    </p>
+    <a href="/{{page<pageTotal?page+1:pageTotal}}"> 下一页 </a>
+</p>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="scripts/remove.js"></script>
+<script>
+//    var mn =''
+////    显示所有的页码数
+//    for(var i = 1; i <= "{{pageTotal}}"; i++){
+//        mn += "<a href='/" + i + "'>" + i + '</a>'
+//    }
+//    $('.num').html(mn)
+//    console.log(mn)
+////    页码数一共是6页
+////显示3个页码数---- 第一种：123, 234， 345，456,567,678  当前页码始终在最左侧
+////    第二种：当前页码始终在中间位置
+////    第一种：page, pageTotal
+////    left,middle, right
+//    var page = {{page}}   // 当前页码
+//    var pages = [page]    // 显示的页码数[1,2,3]
+//    var left = page
+//    var right = page
+////    while()循环
+//    while(right < {{pageTotal}} || left > 1  && pages.length < 3 ){
+////        下一页
+//        if( right < {{pageTotal}} ){
+//            right = ++left
+//            pages.push(right)
+//        }
+////    上一页
+//        if(left > 1){
+//            left = --left
+//            pages.unshift(left)
+//        }
+//
+//    }
+////    上一页  left , middle, right
+////    345上一页 456 下一页 567
+//
+//    console.log(pages)
+
+
+
+</script>
+</html>

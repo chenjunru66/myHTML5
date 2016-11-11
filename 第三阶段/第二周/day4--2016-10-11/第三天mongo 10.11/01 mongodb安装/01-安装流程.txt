@@ -1,0 +1,20 @@
+安装MongoDB
+1.选择custom自定义安装，建议安装位置：c:\mongo,或者d:\mongo
+2.安装后进入mongo文件夹，创建db和log文件夹
+	db：存放数据库 --mongodb的数据存储在db目录下，所以需要创建该目录
+	log:存放日志
+3.设置数据库存储路径
+	mongod --dbpath "c:\mongo\db"
+4.将MongoDB安装成windows服务
+	进入bin文件夹 mongod  --logpath  "c:\mongo\log\mongo.log" --logappend  --dbpath "c:\mongo\data"  --serviceName "mongo"  --install
+
+net start MongoDB
+
+--logpath:设置日志保存的路径
+--dbpath:设置数据的存储路径
+--logappend:使用追加的方式添加文件
+--serviceName:设置服务名称
+--install:指定作为一个window服务安装
+
+可以在计算机的服务中查询当前服务是否启动
+5.进入bin文件：运行mongod.exe，进入操作和管理mongodb的交互环境

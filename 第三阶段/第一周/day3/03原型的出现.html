@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>原型的出现</title>
+</head>
+<body>
+
+
+<script>
+//    function Student(name){
+//        this.name = name
+//        this.age = 18
+//        this.sing = function(){
+//            alert(this.name + '都会唱歌')
+//            return this
+//
+//        }
+//    }
+//    实例化
+//    var ming = new Student('xiaoming')
+//    var hong = new Student('xiaohong')
+//    hong.age = 20
+//    console.log(ming)
+//    console.log(hong)
+//    hong.sing()
+
+//为了节省资源和空间，JS内部提供了prototype属性，---原型
+//当前的原型属性也包含了prototype对象（包含了所有实例化对象的属性和方法）
+//共享属性和方法
+    function aa(name){
+        this.name = name
+    }
+    aa.prototype.sing = function(){
+        alert(this.name + '会唱歌')
+    }
+    var lv = new aa('xiaolv')
+    var ss = new aa('sss')
+//    sss.sing()
+//    lv.sing()
+    console.log(lv)
+
+//aa---function --- object --null         --原型链
+    console.log(aa.__proto__.__proto__.__proto__)
+
+//mm---Array---object--null  --原型链
+    var mm = [1,23.45]
+console.log(mm.__proto__.__proto__.__proto__)
+    var nn= '123445'
+
+//nn ---String---object---null  --原型链
+console.log(nn.__proto__.__proto__.__proto__)
+
+    var as = 12334
+    console.log(as.__proto__.__proto__.__proto__)
+
+//boo---Boolean---object---null  --原型链
+    var boo = false
+    console.log(boo.__proto__.__proto__.__proto__)
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>学生信息管理系统</title>
+</head>
+<body>
+<form action="/login" method="POST">
+    姓名 <input type="text"name="name" pattern="^[0-9a-zA-Z\u4e00-\u9fa5]{2,16}$" placeholder="请输入姓名"required=""/><br/>
+    学号 <input type="text"name="num" placeholder="请输入学号"required=""/><br/>
+    性别 <input type="text"name="sex" placeholder="请输入性别"required=""/><br/>
+    邮箱 <input type="email"name="email" placeholder="请输入邮箱"required=""/><br/>
+   <p>个人介绍：</p>
+    <textarea name="message" id="" cols="30" rows="10"></textarea><br/>
+    
+    <button type="submit">提交</button>
+
+</form>
+<script src="js/jquery.js"></script>
+<script src="script/login.js"></script>
+</body>
+</html>

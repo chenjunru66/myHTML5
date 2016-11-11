@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="范珍">
+        <title>backbone</title>
+    </head>
+    <body>
+        <input type="number" value="1"> + 
+        <input type="number" value="1"> = 
+        <span>2</span>
+        <script src="jquery.js"></script>
+        <script src="underscore-min.js"></script>
+        <script src="backbone-min.js"></script>
+        <script>
+
+           var Model = Backbone.Model.extend({
+               defaults:{
+                   a:1,
+                   b:1
+               },
+               sum:function(){
+                   return this.get('a') + this.get('b') 
+               }
+           })
+
+           var View = Backbone.View.extend({
+               el:'body',
+               events:{
+                   'input input':'refreshUI'
+               },
+               refreshUI:function(){
+                    //根据页面的输入变化修改Model类中对应的属性
+                   var value1  = parseInt($('input').eq(0).val())
+                   var value2  = parseInt($('input').eq(1).val())
+                   this.model.set({a:value1,b:value2})
+                   //数据操作----求和
+                   var sum = this.model.sum()
+                   //刷新页面
+                   $('span').html(sum)
+               }
+           })
+
+           new View({model:new Model()})
+           
+        </script>
+    </body>
+</html>

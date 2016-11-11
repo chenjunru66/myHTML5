@@ -1,0 +1,52 @@
+{{include 'same/header'}}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container dropdown">
+        <a class="navbar-brand" href="/">智游教育</a>
+        <div class="navbar-text pull-right text-right">
+                    <span class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span> 姓名
+                    </span>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li><a class="text-right" href="user.html">个人资料</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a class="text-right" href="/">退出</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <form>
+        <div class="form-group">
+            <textarea name="content" class="form-control" rows="10" placeholder="请详细填写回答内容"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success form-control">提交回答</button>
+    </form>
+</div>
+{{include 'same/modal'}}
+
+</body>
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery.cookie.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script>
+    var ids = $.cookie('ids')
+    console.log(ids)
+    console.log($.cookie())
+    $("form").submit(function (ev) {
+        ev.preventDefault();
+        var data = $("form").serialize();
+        console.log(data)
+//        $.post( paral,data,cb) paral--请求的路径； data--待发送的数据（键值对）； cb--回调函数 - 请求成功并且服务器有响应数据时执行的代码，类似于原生里请求状态发生改变时执行的事件； res--原生里指的是responseText，服务器返回的响应数据
+        $.post("/ans/" + ids ,data, function (res) {
+            console.log(res);
+            if(res.code == 'success'){
+                $('.modal').modal('show')
+                $('.modal-body').html(res.message)
+                $('.btn-default').click(function () {
+                    location.href = '/'
+                })
+            }
+        })
+    })
+</script>
+</html>

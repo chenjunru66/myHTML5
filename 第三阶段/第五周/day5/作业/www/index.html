@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<title>备忘录</title>
+	<link rel="stylesheet" href="js/libs/Font-Awesome/css/font-awesome.css">
+	<link href="css/jquery-ui.css" rel="stylesheet">
+	<style>
+		body{
+			font-family: "Trebuchet MS", sans-serif;
+			margin: 50px;
+			background: gray;
+
+		}
+          main{
+			  width: 500px;
+			  margin: 0 auto;
+			  min-height: 300px;
+			  background: #ffffff;
+			  border-radius: 10px;
+			  padding: 20px;
+			  position: relative;
+		  }
+		h1{
+			margin: 0;
+			margin-bottom: 15px;
+		}
+            #radio label span{
+				display: none;
+			}
+			#radio .ui-state-defaults{
+				border: 1px solid #c5c5c5 !important;
+				background: #f6f6f6 !important;
+				font-weight: normal !important;
+				color: #454545 !important;
+			}
+
+		#radio .ui-state-actives{
+			background: #007fff !important;
+			border:1px solid #003eff !important;
+		}
+		footer{
+			position: absolute;
+			bottom: 0;
+			width: 85%;
+			height: 70px;
+			text-align: center;
+		}
+		footer .icon-plus-sign{
+			/*display: none;*/
+			cursor: pointer	;
+			position: absolute;
+			bottom: 5px;
+
+		}
+
+		#editBox{
+			width: 100%;
+             height: 100%;
+			display: none;
+            padding-top: 30px;
+		}
+		#editBox input{
+			width: 70%;
+			line-height: 20px;
+			display: inline-block;
+		}
+		#editBox button{
+			padding: 5px 10px;
+		}
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			height: 300px;
+		}
+		li{
+			border: 1px solid lightgray;
+			border-radius: 5px;
+			margin: 5px;
+			background: #EEEEEE;
+			overflow: hidden;
+			padding: 10px;
+		}
+		.placeholder{
+			background: #ffff00;
+			height: 25px;
+		}
+		li span{
+			float: left;
+		}
+		li label{
+			background: url("css/images/unselect.png");
+			background-size: 100%;
+			float: right;
+			width: 20px;
+			height: 20px;
+		}
+		li input{
+			display:none;
+		}
+		li input:checked+label{
+			background: url("css/images/select.png");
+			background-size: 100%;
+		}
+		li input+label{
+			background: url("css/images/unselect.png");
+			background-size: 100%;
+		}
+		/*设置垃圾桶的颜色*/
+		.icon-trash{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+<main>
+	<header>
+		<h1>星期一</h1>
+		<div id="radio">
+			<input type="radio"id="radio1"name="radio"/><label for="radio1">昨天</label>
+			<input type="radio"id="radio2"checked='checked'name="radio"/><label for="radio2">今天</label>
+			<input type="radio"id="radio3"name="radio"/><label for="radio3">明天</label>
+			<input type="radio"id="radio4"name="radio"/><label for="radio4">后天</label>
+			<input type="radio"id="radio5"name="radio"/><label for="radio5">大后天</label>
+			<input type="radio"id="radio6"name="radio"/><label for="radio6">日历</label>
+		</div>
+	</header>
+
+	<section>
+		<!--展示任务的区域-->
+		<ul>
+
+		</ul>
+
+	</section>
+	<footer>
+		<!--添加任务的区域-->
+		<span class="icon-plus-sign icon-4x"></span>
+
+		<div id="editBox">
+			<input type="text"required=""placeholder="请输入任务内容"/>
+			<button>提交</button>
+		</div>
+	</footer>
+</main>
+
+</body>
+<script id="reminds" type="text/html">
+	{{each arr as item}}
+	<li>
+		<span>{{item.content}}</span>
+		<input type="checkbox" id="{{item.id}}"{{item.complete? 'checked':''}}/>
+		<label for="{{item.id}}"></label>
+	</li>
+	{{/each}}
+</script>
+<!--采用requirejs模块化，设置入口js文件-->
+<script src="js/libs/require.js" data-main="js/index"></script>
+</body>
+</html>

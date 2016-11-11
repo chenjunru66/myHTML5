@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON解析</title>
+</head>
+<body>
+    <h1> 请看控制台输出 </h1>
+</body>
+<script>
+    // 设置值为多个类型的本地存储
+    console.log( localStorage )
+    localStorage.setItem('name', 'lucy')
+    localStorage.setItem('age', 50)
+    localStorage.setItem('isMale', true)
+    localStorage.setItem('object', JSON.stringify({
+        weight:100, tall:'180cm'
+    }) )
+
+    var obj = {
+        name:'yan', age:18, isMale:false
+    }
+    var arr = [
+            1, 2, 3, {name:'lily', age:20, isMale:true}
+    ]
+    var boo = true
+
+    var str = 'yh'
+    str1 = JSON.stringify(str)
+
+//    if( typeof str === typeof  str1){
+//        console.log(true)
+//    }
+
+//    var str2 = JSON.parse('{"name":"value"}')
+//    console.log( typeof str2 )
+//
+//    boo1 = JSON.stringify(boo)
+//    console.log( boo1)
+//
+//    obj1 = JSON.stringify(obj)
+//    console.log( typeof obj1 )
+//    arr1 = JSON.stringify(arr)
+//    console.log( typeof arr1)
+
+//    if( typeof arr1 === 'string'){
+//        console.log(true)
+//    } else {
+//        console.log(false)
+//    }
+//JSON.parse(): 把json数据转化为JS对象，
+//              ==== 字符串转为原数据类型
+
+//    JSON.stringify():把JS对象转为JSON数据
+//         ====  原数据类型转为字符串
+// 如果人为将json数据转为JS对象呢
+//    布尔值/数字可直接转化；
+//    对象:  '{"name":"value"}'
+//    字符串: '\"strings\"'
+var obj1 =  [1,2,3] //{name:'lis'}
+var obj2 = [1,2,3] //{name:'lis'}
+console.log(obj1 === obj2)
+//    console.log( obj1.name == obj2.name )
+</script>
+</html>

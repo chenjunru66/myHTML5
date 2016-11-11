@@ -1,0 +1,11 @@
+编写art-template模板的步骤：
+(1)服务器端的编写
+1.首先在终端引入npm install art-template --save
+
+
+
+
+
+
+
+（2）浏览器端的编写

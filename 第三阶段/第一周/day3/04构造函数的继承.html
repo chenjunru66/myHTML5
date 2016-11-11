@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>构造函数的继承</title>
+</head>
+<body>
+
+
+<script>
+    function Stu(name){
+        this.name = name
+        this.age = 19
+    }
+
+    Stu.prototype.sing =function(){
+        alert(this.name + '会唱歌')
+    }
+
+    function low(color){
+//        通过call()，改变了stu函数中this的指向，使其指向low
+        Stu.call(this)
+//        this.name = name
+        this.color = color
+    }
+
+//    构造函数内部自定义的属性和方法可以调用，其原型链中的属性和方法不能被调用
+    var ming = new low('小明','白色')
+    low.prototype = new Stu()
+    low.prototype.constructor = low
+//    console.log(low.__proto__)
+//    console.log(ming.__proto__)
+    ming.sing()
+
+</script>
+</body>
+</html>

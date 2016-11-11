@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="陈俊如">
+        <title>backbone路由</title>
+        <style>
+            nav{
+                height: 64px;
+                overflow: hidden;
+                background: lightgray
+            }
+            nav a{
+                float: left;
+                width:33.3%;
+                line-height: 64px;
+                text-align: center
+            }
+            main{
+                height: calc( 100% - 64px);
+                width: 100%;
+                position: relative;
+            }
+           section{
+                width: 100%;
+                position: absolute;               display: none;
+            }
+            section:nth-child(1){
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+             <a href="#desktop">桌面</a>
+             <a href="#android">Android</a>
+             <a href="#ios">Ios</a>
+        </nav>
+       
+        <main>
+            <section>桌面的详情</section>
+            <section>Android的详情</section>
+            <section>Ios的详情</section>
+        </main>
+    </body>
+</html>
+<script src="libs/underscore.js"></script>
+<script src="libs/jquery.js"></script>
+<script src="libs/backbone.js"></script>
+<script src="index.js"></script>

@@ -1,0 +1,20 @@
+{
+  "name": "formdata",
+  "version": "1.0.0",
+  "description": "通过form表单填入数据，把当前数据信息传递给formdata对象",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "陈俊如",
+  "license": "ISC",
+  "dependencies": {
+    "art-template": "^3.0.3",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.3",
+    "multer": "^1.2.0"
+  }
+}

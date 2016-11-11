@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>插件的写法</title>
+</head>
+<style>
+    div
+    {
+        position: absolute;
+    }
+</style>
+<body>
+<div></div>
+<script src="jquery.js"></script>
+<script>
+//    console.log($)//function jQuery()
+//    console.log($())//Object {  }
+//    console.log($.extend())//Object {  }
+//    console.log($.fn)//jquery对象
+//    $.fn.swim = function(){
+//        console.log('11111')
+//    }
+//    console.log($.fn)//jquery对象
+////    $.extend() == 合并参数以及参数值
+//    console.log($.extend('a','a','a'))
+//    console.log($.extend({
+//        name:'yh',
+//        age:3
+//    },'adsa',100))
+//    $().swim()
+//
+//    $.fn.myswim = function(options){
+//        var defaults = {
+//            width:200,
+//            height:200,
+//            background:'red'
+//        }
+//        var settings = $.extend( defaults ,options)
+//        console.log(settings)
+//        $(this).css(settings)
+//    }
+//
+//    $('div').myswim({
+//        width:100,
+//        height:100,
+//        background:"#0000"
+//    })
+//    $('div').myswim()
+
+$.fn.swim = function(options,spes){
+    var defs ={
+        width:300,
+        height:300,
+        background:'red',
+        left:0
+    }
+    var sets = $.extend(defs,options)
+    $(this).css(sets)
+    $(this).animate(spes,1000)
+}
+$('div').swim({left:500},{left:0})
+
+
+    var div = function(top){
+        return top
+    }
+ var divs = div({name:'liu', age:3})
+</script>
+<script src="lb-silde.js"></script>
+</body>
+</html>

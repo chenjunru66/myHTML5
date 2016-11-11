@@ -1,0 +1,18 @@
+/**
+ * Created by Administrator on 2016/10/8.
+ */
+$('form').submit(function(ev){
+    ev.preventDefault()
+    var datas = $(this).serialize()
+
+    $.post('/user/login',datas,function(res){
+        if(res.code == 'success'){
+            alert(res.message)
+            location.href = './../views/index.html'
+        }else{
+            alert(res.message)
+        }
+    })
+
+
+})

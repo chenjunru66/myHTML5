@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>构造函数的最终继承方法</title>
+</head>
+<body>
+<script>
+    function Student(){
+        this.age = 20
+    }
+    Student.prototype.run = function(){
+        alert('都跑得快')
+    }
+    function low(name,color){
+        Student.call(this)
+        this.name = name
+        this.color = color
+    }
+
+//    创建一个空的构造函数
+    var third = function(){ }
+    third.prototype = Student.prototype
+    low.prototype = new third()
+//    low.prototype.constructor = low
+
+    var  ming = new low('xiaoming','yellow')
+    ming.run()
+//    ming.run()执行的时候，先从自身找方法，找不到的话，会到ming的原型链中找对应的方法
+//    ming--Object()---Student prototype---object --null
+    console.log(ming.__proto__.__proto__.__proto__.__proto__)
+//    console.log(low.prototype)
+
+
+//    console.log( Object.getPrototypeOf(low) )
+//    console.log(low.prototype)
+//    console.log(Student.prototype)
+////    low.prototype = new Student()
+//    if(low.prototype == Student.prototype){
+//        console.log('相等')
+//    }else{
+//        console.log('不相等')
+//    }
+//    var a = {name:'han',age:10}
+//    var b = [2,22,33]
+//    var c = '12r3r23r3'
+//    var d = false
+//    var e = 12345
+//    console.log(d.prototype)//prototype是数据类型对象的属性，不是实例化对象的属性
+//
+//    if(a.prototype == b.prototype){
+//        console.log('相等')
+//    }else{
+//        console.log('不相等')
+//    }
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>art-template</title>
+    <!--<script src="jquery.js"></script>-->
+    <!--<script src="template.js"></script>-->
+</head>
+<body>
+<article>
+
+    <h1>没有推荐的数目</h1>
+    {{each mess as arr ins}}
+    <p>{{arr.message}}</p>
+    <p>{{arr.username}}</p>
+    <p>{{arr.time}}</p>
+    {{/each}}
+
+</article>
+
+</body>
+</html>

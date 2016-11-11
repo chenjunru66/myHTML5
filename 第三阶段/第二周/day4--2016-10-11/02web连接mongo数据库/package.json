@@ -1,0 +1,14 @@
+{
+  "name": "mongodb",
+  "version": "1.0.0",
+  "description": "这是一个网站服务器连接mongodb数据的文件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "陈俊如",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^4.6.3"
+  }
+}

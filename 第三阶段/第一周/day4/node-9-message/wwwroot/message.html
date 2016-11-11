@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>message</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            /*position: relative;*/
+        }
+        section{
+            position: absolute;
+        }
+        .f1{
+           width: 100%;  
+            height: 100%;
+          position: absolute;
+          top: 0px;
+            display: none;
+        }
+        #demo1{
+            width: 300px;
+            background: #ffffff;
+            border: 1px solid #000000;
+            border-radius: 15px;
+            text-align: center;
+            margin: 0 auto;
+            box-shadow:-5px -5px 1px #666666 ;
+            margin-top: 200px;
+        }
+        h3{
+            margin: 5px 0;
+            color: #666666;
+            border-bottom: 1px solid #000000;
+            padding: 20px 15px 25px 15px;
+        }
+        h4{
+            margin: 0;
+            font-size: 20px;
+            padding: 20px;
+            cursor: pointer;
+        }
+        button{
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<section>
+<form action="/login" method="post">
+    <textarea name="liuyan" id="tex" required="" cols="30" rows="10"></textarea>
+    <button type="submit" id="btn1">提交</button>
+
+</form>
+</section>
+<div class="f1">
+     <div id="demo1">
+         <h3>感谢你的留言!!!!</h3>
+         <h4 onclick="javascrtpt:window.location.href='index.html'">确定</h4>
+     </div>
+</div>
+
+<script src="formdata2.js"></script>
+</body>
+</html>

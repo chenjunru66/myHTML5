@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>art-template基本语法</title>
+    <script src="jquery.js"></script>
+    <script src="template.js"></script>
+</head>
+<body>
+<article>
+
+</article>
+
+
+
+<!--子模板1-->
+<script id="web"type="text/html">
+    <a href="{{url}}">{{name}}</a>
+</script>
+
+<!--子模板2-->
+<script id="book"type="text/html">
+   <p>{{name}}</p>
+   <p>{{price}}</p>
+   <p>{{teacher}}</p>
+</script>
+
+<!--{{include 模板名 子模板所需的数据}}-->
+<script id="template" type="text/html">
+   {{if books.length == 0}}
+    <h1>没有推荐的书目</h1>
+    {{else}}
+    {{each books as item ins}}
+    <!--item:数组元素，根据数据元素中type属性吧数据分为web和book两类，进而导入子模板-->
+           <section>
+               {{if item.type == 'web'}}
+               {{include 'web' item}}
+               {{else}}
+               {{include 'book' item}}
+               {{/if}}
+           </section>
+               {{/each}}
+               {{/if}}
+</script>
+
+
+<script>
+    template.helper('pri',function(price){
+        return '￥' + price.toFixed(2)
+    })
+
+
+</script>
+<script>
+    var datas = {
+        title:'推荐的课程',
+                books:[
+            {   name:'HTML5',
+                teacher:'yan',
+                price:16000 ,
+                type:'book'} ,
+
+            {   name:'PHP',
+                teacher:'lao',
+                price:18900 ,
+                type:'book'} ,
+
+            {   name:'JAVA',
+                teacher:'chen',
+                price:24000  } ,
+
+            {   name:'github',
+                url:'http://www.github.com',
+                type:'web'},
+            {   name:'art-template',
+                url:'http://www.baidu.com',
+                type:'web'
+             }
+        ]
+    }
+    var html = template('template',datas)
+    $('article').html(html)
+
+</script>
+</body>
+</html>

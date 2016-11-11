@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+</head>
+<style>
+    body{
+        margin: 0;
+    }
+    .wrapper{
+        width: 1202px;
+        margin:0 auto;
+        margin-top: 100px;
+        overflow: hidden;
+        border: 1px solid red;
+    }
+    .banner{
+        width: 50px;
+        /*position: relative;*/
+        /*overflow: hidden;*/
+    }
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+        width: 1202px;
+        height: 300px;
+
+    }
+    li{
+        float: left;
+        border: 1px solid #000000;
+        position: absolute;
+        cursor: pointer;
+        background: black;
+        /*opacity: 0.6;*/
+    }
+    li img{
+        width: 100%;
+        height: 100%;
+        display: block;
+         /*opacity: 1;*/
+    }
+    /*li:nth-of-type(1) img{*/
+        /*opacity: 0.6;*/
+    /*}*/
+    /*li:nth-of-type(1){*/
+        /*width: 250px;*/
+        /*height: 143px;*/
+        /*top: calc( 50% - 72px );*/
+        /*z-index: 1;*/
+    /*}*/
+    /*li:nth-of-type(2) img{*/
+        /*opacity: 0.5;*/
+    /*}*/
+    /*li:nth-of-type(2){*/
+        /*width: 300px;*/
+        /*height: 171px;*/
+        /*top: calc( 50% - 85px );*/
+        /*left: 150px;*/
+        /*z-index: 2;*/
+        /*opacity: 0.8;*/
+    /*}*/
+    /*li:nth-of-type(3){*/
+        /*width: 390px;*/
+        /*height: 221px;*/
+        /*top: calc( 50% - 115px );*/
+        /*left: calc( 50% - 195px );*/
+        /*z-index: 3;*/
+        /*opacity: 1;*/
+    /*}*/
+    /*li:nth-of-type(4){*/
+        /*width: 300px;*/
+        /*height: 171px;*/
+        /*top: calc( 50% - 85px );*/
+        /*right: 150px;*/
+        /*z-index: 2;*/
+    /*}*/
+    /*li:nth-of-type(5){*/
+        /*width: 250px;*/
+        /*height: 143px;*/
+        /*top: calc( 50% - 72px );*/
+        /*right: 0;*/
+        /*z-index: 1;*/
+    /*}*/
+
+
+    span{
+        cursor: pointer;
+    }
+    span:nth-of-type(1){
+        float: left;
+    }
+    span:nth-of-type(2){
+        float: right;
+    }
+</style>
+<body>
+
+<div class="wrapper">
+    <div class="banner">
+        <ul class="box">
+            <li class="li1">
+
+                <img src="imgs/1.jpg" alt=""/>
+            </li>
+            <li class="li2">
+
+                <img src="imgs/2.jpg" alt=""/>
+            </li>
+            <li class="li3">
+
+                <img src="imgs/3.jpg" alt=""/>
+            </li>
+            <li class="li4">
+
+                <img src="imgs/4.jpg" alt=""/>
+            </li>
+            <li class="li5">
+
+                <img src="imgs/5.jpg" alt=""/>
+            </li>
+            <li class="li6">
+
+                <img src="imgs/6.jpg" alt=""/>
+            </li>
+            <li class="li7">
+
+                <img src="imgs/7.jpg" alt=""/>
+            </li>
+        </ul>
+    </div>
+
+    <span id="pre">上一张</span>
+    <span id="next">下一张</span>
+</div>
+<div class="wrapper">
+    <div class="banner">
+        <ul class="box">
+            <li class="li1">
+
+                <img src="imgs/1.jpg" alt=""/>
+            </li>
+            <li class="li2">
+
+                <img src="imgs/2.jpg" alt=""/>
+            </li>
+            <li class="li3">
+
+                <img src="imgs/3.jpg" alt=""/>
+            </li>
+            <li class="li4">
+
+                <img src="imgs/4.jpg" alt=""/>
+            </li>
+            <li class="li5">
+
+                <img src="imgs/5.jpg" alt=""/>
+            </li>
+            <li class="li6">
+
+                <img src="imgs/6.jpg" alt=""/>
+            </li>
+            <li class="li7">
+
+                <img src="imgs/7.jpg" alt=""/>
+            </li>
+        </ul>
+    </div>
+
+    <span id="pre">上一张</span>
+    <span id="next">下一张</span>
+</div>
+<script src="jquery.js"></script>
+<script src="index.js"></script>
+<script src="cjr-slide.js"></script>
+<script>
+    $('.box').cjrslide()
+</script>
+</body>
+</html>

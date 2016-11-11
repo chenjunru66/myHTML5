@@ -1,0 +1,1 @@
+define(["module"],function(e){function t(e){this.name=e,alert(e+"is singing")}alert("b is running");var n=150;e.exports=t});

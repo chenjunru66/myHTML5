@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>面向对象和面向过程</title>
+</head>
+<body>
+<!--举例 -- 把大象放进冰箱里
+
+
+ -->
+
+
+<script>
+//    alert('打开冰箱门')
+//    alert('把大象放进冰箱里')
+//    alert('关上冰箱门')
+//    function open(){
+//        alert('打开冰箱')
+//    }
+//    open()
+//    function put(){
+//        alert('把大象放进冰箱里')
+//    }
+//    put()
+//    function close(){
+//        alert('把冰箱门关了')
+//    }
+//    close()
+
+
+//面向过程
+//    var ele,box
+//
+//    function open(){
+//    box = '门开了'
+//        alert(box)
+//}
+//    open()
+//
+//    function drop(){
+//        ele = '大象'
+//        alert(ele)
+//    }
+//    drop()
+//
+//    function close(){
+//        box = '门关了'
+//        alert(box)
+//    }
+//    close()
+
+
+//    面向对象的方法写步骤
+    var box = {
+        door:null,
+        open:function(){
+            door = true;
+            alert('冰箱门已开')
+            return this
+        },
+        drop:function(){
+            var ele = '大象'
+//            box = ele
+            alert('大象放进去了')
+            return this
+        },
+        close:function(){
+            door = false
+            alert('冰箱门已关闭')
+            return this
+        }
+
+    }
+box.open().drop().close()
+</script>
+
+
+
+</body>
+</html>

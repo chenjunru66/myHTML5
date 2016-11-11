@@ -1,0 +1,26 @@
+ {
+"title":"推荐的课程",
+"books":[
+{   "name":"HTML5",
+"teacher":"yan",
+"price":16000 ,
+"type":"book"} ,
+
+{   "name":"PHP",
+"teacher":"lao",
+"price":18900 ,
+"type":"book"} ,
+
+{   "name":"JAVA",
+"teacher":"chen",
+"price":24000  } ,
+
+{   "name":"github",
+"url":"http://www.github.com",
+"type":"web"},
+{   "name":"art-template",
+"url":"http://www.baidu.com",
+"type":"web"
+}
+]
+}

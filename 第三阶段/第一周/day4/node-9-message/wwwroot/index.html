@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <script src="jquery.js"></script>
+    <script src="template.js"></script>
+    <style>
+        body{
+            margin: 0;
+        }
+        .wrapper{
+            width: 500px;
+            margin: 0 auto;
+        }
+        h3{
+            text-align: center;
+        }
+        p{
+            margin: 10px;
+        }
+        .m1{
+            color: #666666;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <h3>留言板</h3>
+    <button type="button"onclick="javascrtpt:window.location.href='message.html'">我要留言</button>
+    <div id="demo2"> </div>
+</div>
+<script id="text"type="text/html">
+    {{each arrs as arr index}}
+            <section>
+                <p class="m1">{{arr.infos.liuyan}}</p>
+                <p class="m2">{{arr.date}}</p>
+            </section>
+            {{/each}}
+
+</script>
+<script src="formdata1.js"></script>
+</body>
+</html>

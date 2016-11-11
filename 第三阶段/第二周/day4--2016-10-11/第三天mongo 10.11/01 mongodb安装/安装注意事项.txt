@@ -1,0 +1,64 @@
+安装MongoDB注意事项:
+
+1.安装后进入C:/mongo，新建db和log文件夹
+	db: 存放数据库的数据
+	log:存放日志文件
+2.数据库设置：C：/mongo/bin，进入bin文件夹
+	通过命令行启动mongo服务器
+	mongod --dbpath c:\mongo\db
+
+	双击打开mongo.exe，进入到mongodb服务器终端命令行，输入mongodb的各种命令   
+
+3. 基本结构
+    数据库  --- 集合  ---- 文档
+
+终端命令行：
+1.show dbs    -----  显示所有的数据库
+2.use local   -----   切换到某数据库,如果数据库不存在，则创建该数据库
+3.db.dropDatabase()   --- 删除当前数据库
+3.db.createCollection('集合名称')   --- 创建新集合
+4.db.collectionName.insert({name:value,name:value})  -- 插入数据
+5.db.colName.find()   --- 无条件查找，查找所有的数据
+6.db.colName.find().pretty()  --- 格式化查找的数据
+7.db.colName.find({},{})   --- 多条件查找，都符合条件的都会被获取到
+8.db.colName.find({$or:[{}, {}]})  --- 多条件查找，只要满足其中一个条件，就可以被获取到
+9.db.colName.find({age:{$gt:19}})  --- age大于19的数据都会被获取到 ($gte：大于等于)
+10.db.colName.find({age:{$lt:19}}) --- age小于19的数据都会被获取到  ($lte:小于等于)
+11.db.colName.find({age:{$gt:16, $lt:19}})  --- age大于16小于19的数据都会被获取到
+12.db.colName.find().skip(2).limit(3)   --- 数据跳过2条之后显示3条信息
+13.db.colName.find().sort({age:1})   ---- 查找的数据按升序排列，1:升序， -1：降序
+14.db.colName.update({}, {$set:{}})   -- 更新数据，参数1：查询的条件；参数2：更新的数据(只更新符合条件的一条数据)
+	如果要更新所有满足条件的数据，
+	db.colName.update({}, {$set:{}}, false, true)
+15.db.colName.remove({})   --- 删除数据
+16.db.colName.drop()   --- 删除该集合
+17.db.colName.count()   --- 集合中的数据的条数(数量)
+
+终端中进入bin文件输入代码c:mongo\bin\
+将MongoDB服务器设置成windows服务
+mongod --dbpath c:\mongo\db --logpath c:\mongo\log\mongo.log  --logappend  --install
+如果设置不成功，以管理员身份运行cmd
+net start MongoDB启动服务器
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

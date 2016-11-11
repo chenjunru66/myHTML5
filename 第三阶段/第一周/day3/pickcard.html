@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="陈俊如">
+    <title>简易选项卡</title>
+    <script src="jquery.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        div {
+            width: 40%;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+
+        h5 {
+            margin: 0;
+            background: black;
+            border-bottom: 1px solid black;
+            color: white;
+        }
+
+        span {
+            display: inline-block;
+            padding: 10px 25px;
+            /*border: 1px solid red;*/
+        }
+
+        ul {
+            display: none;
+        }
+
+        ul:nth-of-type(1) {
+            display: block;
+        }
+
+        .f1 {
+            margin-top: 15px;
+        }
+
+        .current {
+            background: gray;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+<main class="tabs">
+<div class="f1">
+    <h5>
+        <span class="m1">第一课</span>
+        <span class="m1">第二课</span>
+        <span class="m1">第三课</span>
+    </h5>
+</div>
+<div>
+    <ul class="f2">
+        <li>网页特效原理分析</li>
+        <li>响应用户操作</li>
+        <li>提示框效果</li>
+        <li>事件驱动</li>
+        <li>元素属性操作</li>
+        <li>动手编写第一个JS特效</li>
+        <li>引入函数</li>
+        <li>网页换肤效果</li>
+        <li>展开/收缩播放列表效果</li>
+    </ul>
+    <ul class="f2">
+        <li>改变网页背景颜色</li>
+        <li>函数传参</li>
+        <li>高重用性函数的编写</li>
+        <li>126邮箱全选效果</li>
+        <li>循环及遍历操作</li>
+        <li>调试器的简单使用</li>
+        <li>典型循环的构成</li>
+        <li>for循环配合if判断</li>
+        <li>className的使用</li>
+
+    </ul>
+    <ul class="f2">
+        <li>JavaScript组成：ECMAScript、DOM、BOM，JavaScript兼容性来源</li>
+        <li>JavaScript出现的位置、优缺点</li>
+        <li>变量、类型、typeof、数据类型转换、变量作用域</li>
+        <li>闭包：什么是闭包、简单应用、闭包缺点</li>
+        <li>运算符：算术、赋值、关系、逻辑、其他运算符</li>
+        <li>程序流程控制：判断、循环、跳出</li>
+        <li>命名规范：命名规范及必要性、匈牙利命名法</li>
+        <li>函数详解：函数构成、调用、事件、传参数、可变参、返回值</li>
+        <li>定时器的使用：setInterval、setTimeout</li>
+
+    </ul>
+
+</div>
+</main>
+<script src="js/jquery.js"></script>
+<script src="js/pickcard.js"></script>
+
+<script>
+    $('main').showhides({
+         spanClass:'m1',
+         ulClass:'f2',
+         showClass:'current'
+    })
+</script>
+</body>
+
+</html>

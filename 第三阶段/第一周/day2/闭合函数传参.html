@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭合函数传参</title>
+    <script src="js/jquery.js"></script>
+    <style>
+        body{
+            margin: 0;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav{
+            margin: 50px 0;
+            color: white;
+        }
+        .f1{
+            overflow: hidden;
+            width: 800px;
+            margin: 0 auto;
+
+        }
+       .f1>li{
+            float: left;
+           background: black;
+        }
+        li{
+            width: 100px;
+            padding: 15px;
+
+        }
+        .f2{
+            display: none;
+            background: lightblue;
+            position: absolute;
+            margin-top: 15px;
+        }
+        /*.drop:hover .f2{*/
+            /*display: block;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<nav class="navs">
+    <ul class="f1">
+        <li>首页</li>
+        <li>产品介绍</li>
+        <li>关于我们</li>
+        <li class="drop">联系我们
+        <ul class="f2">
+            <li>联系电话</li>
+            <li>邮箱地址</li>
+            <li>公司地址</li>
+            <li>在线咨询</li>
+        </ul>
+
+        </li>
+    </ul>
+</nav>
+<nav class="navs">
+    <ul class="f1">
+        <li>首页</li>
+        <li>产品介绍</li>
+        <li>关于我们</li>
+        <li class="drop">联系我们
+            <ul class="f2">
+                <li>联系电话</li>
+                <li>邮箱地址</li>
+                <li>公司地址</li>
+                <li>在线咨询</li>
+            </ul>
+
+        </li>
+    </ul>
+</nav>
+<nav class="navs">
+    <ul class="f1">
+        <li>首页</li>
+        <li>产品介绍</li>
+        <li>关于我们</li>
+        <li class="drop">联系我们
+            <ul class="f2">
+                <li>联系电话</li>
+                <li>邮箱地址</li>
+                <li>公司地址</li>
+                <li>在线咨询</li>
+            </ul>
+
+        </li>
+    </ul>
+</nav>
+<script src="js/ulclick.js"></script>
+<script>
+
+//function a(){
+//    var a= 10
+//    console.log(a)
+//}
+//a()
+//同一个作用域内，变量声明会提前至作用域开始的地方，值还在初始赋值的位置；创建的有名称的自定义函数也会提前至开始的地方，变量赋值的匿名函数，变量声明提前，值还在初始赋值的位置
+
+//var a=10
+//    function as(){
+//        console.log(a)//undefined,变量名上去了，值5没有上去
+//        var a = 5
+//    }
+//    as()
+//(function(){
+//       var a = 10
+//       console.log(a)
+//       console.log($)
+//   })()
+
+
+$(function(){
+    $('.navs').myswim()//引用当前方法即可执行点击事件
+})
+
+
+</script>
+
+
+
+</body>
+</html>

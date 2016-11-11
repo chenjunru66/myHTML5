@@ -1,0 +1,20 @@
+{
+  "name": "studentinformationmanagersystem",
+  "version": "1.0.0",
+  "description": "使用数据库进行学生信息的增删改查操作",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongoose"
+  ],
+  "author": "范珍珍",
+  "license": "ISC",
+  "dependencies": {
+    "art-template": "^3.0.3",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.5"
+  }
+}

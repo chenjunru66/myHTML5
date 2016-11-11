@@ -1,0 +1,1 @@
+({baseUrl:".",appDir:"./",dir:"./abc"});

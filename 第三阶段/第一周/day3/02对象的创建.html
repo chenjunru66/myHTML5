@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>对象的创建</title>
+</head>
+<body>
+
+
+
+<script>
+//    var a = [1,2,3,4,5]
+//    var b = {
+//        name:'chen',
+//        age:3,
+//        sing:function(){
+//            alert('唱歌')
+//            console.log(this)
+//            return this
+//        },
+//        run:function(){
+//            alert('跑步')
+//            return this
+//
+//        }
+//    }
+//    b.sin().run()
+
+    function a(name,age,sing,run){
+        this.name = name
+        this.age  = age
+        this.sing = function(){
+            alert('唱歌')
+            return this
+        }
+        this.run = function(){
+            alert('跑步')
+            return this
+
+        }
+    }
+
+    var b = new a('han',10,'sing','run')
+    console.log(b)
+</script>
+
+</body>
+</html>

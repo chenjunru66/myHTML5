@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RequireJS配置</title>
+    <!-- requireJS --- 浏览器端模块化的工具 -->
+    <!--
+        加载require.js的时候，会默认查找其程序的主入口文件(data-main)
+        加载当前这个文件
+        data-main属性:规定了程序的主入口文件(默认名为main,可自定义)
+        文件不需要加.js后缀，在requireJS中，默认加载的是js文件
+    -->
+
+    <script src="libs/require.js" data-main="scripts/main"></script>
+
+    <!--<script src="libs/jquery.js"></script>-->
+    <!--<script src="libs/jquery.fullscreen.js"></script>-->
+    <!--<script>-->
+        <!--// 全屏按钮-->
+        <!--$(function(){-->
+            <!--$('button').click(function(){-->
+                <!--$(document).fullScreen(true)-->
+            <!--})-->
+        <!--})-->
+    <!--</script>-->
+
+</head>
+<body>
+<span> 这是网站页面内容 </span>
+<button type="button"> 全屏显示 </button>
+</body>
+</html>

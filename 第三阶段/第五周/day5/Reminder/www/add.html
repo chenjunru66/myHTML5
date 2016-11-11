@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="author" content="范珍珍">
+        <title>添加备忘</title>
+        <link rel="stylesheet" href="css/share.css">
+        <link rel="stylesheet" href="css/add.css">
+    </head>
+    <body>
+        <nav>
+            <h1>添加备忘</h1>
+            <a href="index.html">&lt;</a>
+        </nav>
+        <main>
+            <form>
+                <label for="title">标题</label>
+                <input type="text" name="title" id="title" placeholder="请输入备忘标题"> <br> <br>
+                <label for="content">内容</label>
+                <!--textarea：不支持pattern-->
+                <textarea name="content" id="content" cols="30" rows="10" placeholder="请输入备忘详情（不少于10个字）"></textarea> <br> <br>
+                <input type="submit" value="提交备忘">
+            </form>
+        </main>
+    </body>
+</html>
+<script src="js/libs/require.js" data-main="js/add"></script>

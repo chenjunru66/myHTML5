@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<link rel="stylesheet" href="style.css"/>
+<body>
+<div class="div">
+    <span>前一张</span>
+    <ul>
+        <li class="yi"><img src="img/1.jpg" alt=""/></li>
+        <li class="er"><img src="img/2.jpg" alt=""/></li>
+        <li class="san"><img src="img/3.jpg" alt=""/></li>
+        <li class="si"><img src="img/4.jpg" alt=""/></li>
+        <li class="wu"><img src="img/5.jpg" alt=""/></li>
+        <li class="liu"><img src="img/6.jpg" alt=""/></li>
+        <li class="qi"><img src="img/7.jpg" alt=""/></li>
+    </ul>
+    <span>后一张</span>
+</div>
+<div class="div">
+    <span>前一张</span>
+    <ul>
+        <li class="yi"><img src="img/1.jpg" alt=""/></li>
+        <li class="er"><img src="img/2.jpg" alt=""/></li>
+        <li class="san"><img src="img/3.jpg" alt=""/></li>
+        <li class="si"><img src="img/4.jpg" alt=""/></li>
+        <li class="wu"><img src="img/5.jpg" alt=""/></li>
+        <li class="liu"><img src="img/6.jpg" alt=""/></li>
+        <li class="qi"><img src="img/7.jpg" alt=""/></li>
+    </ul>
+    <span>后一张</span>
+</div>
+<div class="div">
+    <span>前一张</span>
+    <ul>
+        <li class="yi"><img src="img/1.jpg" alt=""/></li>
+        <li class="er"><img src="img/2.jpg" alt=""/></li>
+        <li class="san"><img src="img/3.jpg" alt=""/></li>
+        <li class="si"><img src="img/4.jpg" alt=""/></li>
+        <li class="wu"><img src="img/5.jpg" alt=""/></li>
+        <li class="liu"><img src="img/6.jpg" alt=""/></li>
+        <li class="qi"><img src="img/7.jpg" alt=""/></li>
+    </ul>
+    <span>后一张</span>
+</div>
+<script src="jquery.js"></script>
+<script>
+    var lisCSS = [
+        {width: 8+'vw',left: 35+'vw',zIndex: 1,top:5+'vw',o:1},
+        {width: 8+'vw',left: 27+'vw',zIndex: 2,top:5+'vw',o:0.5},
+        {width: 15+'vw',left: 32+'vw',zIndex: 3,top:3+'vw',o:0.7},
+        {width: 20+'vw',left: 37+'vw',zIndex: 4,top:2+'vw',o:1},
+        {width: 15+'vw',left: 49+'vw',zIndex: 3,top:3+'vw',o:0.7},
+        {width: 8+'vw',left: 60+'vw',zIndex: 2,top:5+'vw',o:0.5},
+        {width: 8+'vw',left: 54+'vw',zIndex: 1,top:5+'vw',o:1}
+    ]
+    $.fn.uls = function(){
+        console.log(this)
+        console.log($(this))
+
+    }
+
+    $('.div ul').uls()
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+<form action="/eddit/{{id}}" method="POST">
+    姓名 <input type="text"name="name" value="{{name}}" pattern="^[0-9a-zA-Z\u4e00-\u9fa5]{2,16}$" placeholder="请输入姓名"required=""/><br/>
+    学号 <input type="text"name="num" value="{{num}}"placeholder="请输入学号"required=""/><br/>
+    性别 <input type="text"name="sex" value="{{sex}}"placeholder="请输入性别"required=""/><br/>
+    邮箱 <input type="email"name="email" value="{{email}}" placeholder="请输入邮箱"required=""/><br/>
+    <p>个人介绍：</p>
+    <textarea name="message" id="" cols="30" rows="10">{{message}}</textarea><br/>
+
+    <button type="submit">更新</button>
+
+</form>
+<!--<script src="js/jquery.js"></script>-->
+<!--&lt;!&ndash;<script src="script/login.js"></script>&ndash;&gt;-->
+<!--<script>-->
+    <!--$('form').submit(function(){-->
+        <!--location.href ='/'-->
+    <!--})-->
+<!--</script>-->
+</body>
+</html>

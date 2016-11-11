@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error 类型</title>
+</head>
+<body>
+    <h1> 查看控制台输出 </h1>
+</body>
+<script>
+    // 错误类型  来自于错误的代码块
+
+// 1.ReferenceError:无效引用；引用未定义(不存在)的变量或方法时
+    var a = function(){
+        alert('a is runing')
+    }
+    //    as()
+    //    console.log(aa)
+// 2.TypeError:类型错误， 当定义一个变量时，执行变量的类型不一致
+    // 执行方法错误
+    var stu
+//    console.log(stu.age)
+//    console.log(stu())
+//    console.log( stu[0] )
+
+// 3. SyntaxError:语法错误
+
+//    console..log('12345')
+//    console.log('12345'),
+
+//    控制台输出错误信息的格式：
+    // 错误类型
+    // 错误的描述信息
+    // 错误所属的文件名
+    // 错误出现的行号 和 列号
+    // 调试器中错误代码所出现的具体信息
+
+//    创建一个error对象是不会影响代码运行的，
+//      抛出错误会直接终止程序运行,导致程序死亡
+console.log(Error)
+//     创建错误对象
+    var err = new Error('错误的描述原因：什么错误导致了程序停止')
+    console.log('程序会终止吗？')
+//    throw err
+    console.log('程序会继续执行吗？')
+//    throw new Error('我是阻止代码执行的')
+    console.log('程序到底会不会终止')
+
+// 处理错误代码 try, catch, throw
+
+    var student
+    try{
+        if(student.isMale){
+            console.log('Male')
+        } else {
+            console.log('feMale')
+        }
+    } catch (error){
+//        判断当前的错误类型是否 == TypeError
+//        当代码块出现的错误的时候，是需要判断代码是否有修正的可能性，
+//        如果有，修正代码，否则，抛出错误，程序死亡
+        if( error.name == 'TypeError' ){
+            console.log('student没有isMale属性')
+        } else {
+//            throw error
+        }
+
+
+    }
+
+
+
+</script>
+</html>

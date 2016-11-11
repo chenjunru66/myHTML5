@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> Canvas绘图文字 </title>
+    <style>
+        canvas{
+            border:solid 1px #000
+        }
+    </style>
+</head>
+<body>
+
+    <canvas class="one"></canvas>
+    <canvas class="two"></canvas>
+    <canvas class="three"></canvas>
+</body>
+<script>
+    // 绘制文本内容
+    function one(){
+        var ctx = document.querySelector('.one').getContext('2d')
+//        fillText(text, x, y)  x == 偏移距离，y == 距离文字下边框的高度
+        ctx.font = "50px Aria"  // 绘制文本的字体大小和样式
+        ctx.fillStyle = 'red'
+        ctx.strokeStyle = 'blue'
+        ctx.fillText('hello world', 10, 100)   // 实心文字
+        ctx.strokeText('javascript',  10, 50)  // 空心文字
+
+    }
+    one()
+//    创建渐变色  --- 线性渐变、径向渐变
+//    createLinearGradient(x,y,x1,y1)  渐变的起点和终点位置
+//     当绘图大小超过渐变色的范围时，超出大小颜色为最后的颜色
+//    addColorStop(number,color) 设置渐变区域的颜色，Num在0-1之间
+    function two(){
+        var ctx = document.querySelector('.two').getContext('2d')
+        var line = ctx.createLinearGradient(0,0,100,0)
+        line.addColorStop(0, 'red')
+        line.addColorStop(0.5, 'yellow')
+        line.addColorStop(0.8, 'black')
+        line.addColorStop(1, 'blue')
+        ctx.fillStyle = line
+        ctx.fillRect(0,0,100,200)
+
+//        径向渐变 createRadialGradient(x,y,r,x1,y1,r2)
+        var rads = ctx.createRadialGradient(200,60,10,200,60,40)
+        rads.addColorStop(0,'red')
+        rads.addColorStop(0.5,'yellow')
+        rads.addColorStop(0.8, 'orange')
+        ctx.fillStyle = rads
+        ctx.beginPath()
+        ctx.arc(200,60,40,0, Math.PI * 2)
+        ctx.fill()
+    }
+    two()
+// 绘制图片 drawImage(img,x,y)
+//    drawImage(img,x,y,width,height)
+    function three(){
+        var ctx = document.querySelector('.three').getContext('2d')
+        var img = new Image()
+        img.src = "http://www.baidu.com/img/bd_logo1.png"
+        img.onload = function(){
+            ctx.drawImage(img, 0,0, 100,100)
+        }
+//        console.log(img)
+    }
+    three()
+</script>
+</html>

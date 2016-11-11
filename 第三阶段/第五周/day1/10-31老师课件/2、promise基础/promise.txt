@@ -1,0 +1,10 @@
+﻿长期以来JS都是以单线程的模式运行的，而JS又通常应用在操作用户界面和网络请求这些任务上。操作用户界面时不能进行耗时较长的操作否则会导致界面卡死，而网络请求和动画等就是耗时较长的操作。所以在JS中经常要进行异步编程。而最基本的异步编程方法是事件和回调函数。但无论是事件还是回调函数在遇到稍微复杂一点的场景时都会变得难以使用。如时机问题、等待问题等。这时就产生了Promise的概念。
+	Promise可以保证无论什么时候添加回调函数，都能使回调函数得到恰当的调用；还能保证异步任务的状态不会被篡改。JS中的Promise有多种实现方案，它们的API各有不同，但核心概念都是相似的。
+	
+	ES6支持Promise、提供了resolve、reject、then、catch、race、all等最基本的API。
+jQuery则通过Deferred额外提供了进度通知及在外部改变状态的API，支持resolve、reject、then、done、fail、always、progress、notify、state等，还有通过$.when()支持类似all的功能，支持通过promise()转换成Promise对象（不是ES6中的Promise，而是表示一种不可从外部更改状态的Deferred）
+Angular则支持$q，它即兼有ES6中Promise和jQuery Defferred的特点。
+
+	使用Promise可以将异步任务本身与后续业务完全分离，因此可以简化异步编程。
+
+	JS在H5时增加了多线程API，即WebWorker。WebWorker是一个真正的分线程，与其它系统线程一样。但与其它编程技术中的多线程不同，它是通过消息机制与主线程交互的。因此可以理解为是放入沙盒中的线程。因为没有开放其它API，避免了产生线程死锁的可能，但功能上要弱一些。

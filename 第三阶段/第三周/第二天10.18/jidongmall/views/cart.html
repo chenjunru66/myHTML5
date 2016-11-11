@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>我的购物车</title>
+    <link rel="icon" href="imgs/index.png">
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/all.css"/>
+    <style>
+        body{
+            margin:0;
+            padding: 0;
+        }
+        header{
+            overflow: hidden;
+            border-bottom:1px solid #BBBBBB;
+            background: #F9F9F9;
+        }
+        header span{
+            float: left;
+            padding: 10px;
+            font-size: 20px;
+        }
+        header .fa-angle-left{
+            color: #909295;
+            font-size: 30px;
+            margin-right: 110px;
+        }
+        header .user{
+            padding:13px 0 0 30px;
+            font-size: 16px;
+        }
+        .main1{
+            overflow: hidden;
+
+        }
+        .main1 section{
+            float: left;
+        }
+        .mainimg{
+            width: 30px;
+            height: 30px;
+            margin-left: 40px;
+            padding: 5px;
+        }
+        .mainimg img{
+            width: 100%;
+            height: 100%;
+        }
+        .mainzi{
+            padding: 5px;
+            color: #686868;
+
+        }
+        /*.main3 .thing{*/
+            /*overflow: hidden;*/
+        /*}*/
+        .main3 h3{
+            background: #EEEEEE;
+            padding: 10px ;
+            margin: 10px 0 2px 0;
+            font-size: 20px;
+        }
+        /*.main3  section{*/
+            /*float: left;*/
+        /*}*/
+        .main3 .pic{
+            width: 100vw;
+            height: 200px;
+        }
+        .pic>img{
+            width: 100%;
+            height: 100%;
+            /*display: inline-block;*/
+            /*text-align: center;*/
+        }
+        .des p {
+            padding: 0 10px;
+            text-indent: 2em;
+        }
+        .des  strong{
+            font-size: 20px;
+            padding: 0 10px;
+            color: red;
+        }
+        .thing{
+            border: 1px solid #E4E3E5;
+            margin-top: 5px;
+            background: #EEEEEE;
+        }
+        .foot{
+            width: 100vw;
+            height: 50px;
+            margin-bottom: 48px;
+        }
+        .foot p{
+            text-align: center;
+            padding: 10px 0 0 0;
+            color: #928689;
+        }
+        footer{
+
+            padding: 15px;
+            font-size: 18px;
+            position: fixed;
+            z-index: 10;
+            bottom: 0;
+            background:#EEEEEE ;
+            width: 100vw;
+        }
+        footer div{
+            display: flex;
+            justify-content: space-between;
+        }
+        footer a span{
+            cursor: pointer;
+            color: #4B4B4D;
+        }
+        .count{
+            font-size: 20px;
+        }
+        .zongjia{
+            color: red;
+            font-size: 25px;
+        }
+        .main3{
+            width: 100vw;
+            height: 100px;
+            background: #928689;
+        }
+        .fa-user{
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <a href="/"><span class="fa fa-angle-left"></span></a>
+    <span>购物车</span>
+    <span class="user">用户名</span>
+</header>
+<main>
+         <div class="main1">
+            <section class="mainimg"><img src="imgs/safe.png" alt=""/></section>
+             <section class="mainzi">您正在安全购物环境中，请放心购物</section>
+         </div>
+
+    <div class="product">
+
+        <form action="">
+            {{each datas as data index}}
+            <div class="thing">
+                <section class="pic">
+            <img src="uploads/{{data.proname}}.jpg" alt=""/>
+                </section>
+                <section class="des">
+                    <p>{{data.miaoshu}}</p>
+                    <strong>￥ <span>{{data.price}}</span></strong>
+                    <input  class="yonghu select"type="checkbox" value='{{data.proname}}'name="proname"/>
+                </section>
+                <section>
+                    <button type="button" pid="{{data.id}}"class="guanli delete">删除</button>
+                    <button type="button" class="guanli buy">购买</button>
+                </section>
+            </div>
+            {{/each}}
+        </form>
+
+    </div>
+
+</main>
+<div class="main3">
+    <section class="none"></section>
+    <section class="count"></section>
+    <section class="zongjia"></section>
+</div>
+<div class="foot">
+    <p>Copyright © 2004-2016 京东JD.com 版权所有
+    </p>
+
+</div>
+<footer>
+    <div>
+        <a href="/"><span class="fa fa-home"><span class="zi">首页</span></span></a>
+        <a href=""><span class="fa fa-file"><span class="zi">分类</span></span></a>
+        <a href=""><span class="fa fa-shopping-cart"><span class="zi">购物车</span></span></a>
+        <span class="fa fa-user"><span class="zi">我的</span></span>
+    </div>
+</footer>
+
+</body>
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery.cookie.js"></script>
+<script src="/scripts/cart.js"></script>
+</html>

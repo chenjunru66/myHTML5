@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas基础知识</title>
+    <style>
+        canvas{
+            border: solid 1px #000;
+        }
+    </style>
+</head>
+<body>
+<!--
+    默认的宽高 300*150
+    绘图容器 === 白纸， 通过Js进行绘制
+ -->
+    <canvas id="canvas"></canvas>
+    <canvas class="ids"></canvas>
+    <canvas class="circle"></canvas>
+    <canvas class="cc2"></canvas>
+<script>
+    var canvas = document.getElementById('canvas')
+
+// 通过getContext()方法创建Context对象，获取其绘图以及渲染上下文的功能
+// 该方法只有一个参数:2d
+//    判断浏览器对当前canvas的绘图功能支持性
+//    console.log( canvas.getContext )  // function
+    var ctx = canvas.getContext('2d')
+//    console.log(ctx)
+
+//    矩形：填充矩形、边框矩形
+//    填充矩形  ，默认的填充色：黑色
+//    fillRect(x,y,width,height)
+    ctx.fillRect(50, 50, 100, 100)
+//   边框矩形，strokeRect(x,y,width, height)
+//    ctx.strokeRect(120, 0,50,50)
+//  透明矩形 == 清除颜色(所选矩形) clearRect(x,y,width, height)
+    ctx.clearRect(75,75, 50,50)
+    ctx.strokeRect(85, 85,30,30)
+
+// 绘制路径  === 画线条
+
+    var ids = document.querySelector('.ids')
+    var ctx1 = ids.getContext('2d')
+//    moveTo(x,y)   设置画笔的起始位置，重新开始路径
+//    lineTo(x,y)   绘制画笔的上一个位置到当前位置的直线
+//    stroke()  描边  --- 在当前代码之前的线
+    ctx1.moveTo(10,10)
+    ctx1.lineTo(30,50)
+    ctx1.lineTo(50,10)
+    ctx1.lineTo(70,50)
+    ctx1.lineTo(90,10)
+    ctx1.stroke()
+    ctx1.lineTo(110,50)
+    ctx1.stroke()
+//    田
+    ctx1.moveTo(60,60)
+    ctx1.lineTo(60, 110)
+    ctx1.lineTo(110, 110)
+    ctx1.lineTo(110,60)
+    ctx1.lineTo(60, 60)
+    ctx1.stroke()
+
+    ctx1.moveTo(85, 60)
+    ctx1.lineTo(85, 110)
+    ctx1.stroke()
+
+    ctx1.moveTo(60, 85)
+    ctx1.lineTo(110, 85)
+    ctx1.stroke()
+//填充三角形
+//    beginPath()   // 重新定义一个路径的开始
+    ctx1.beginPath()
+    ctx1.moveTo(150, 50)
+    ctx1.lineTo(150,100)
+    ctx1.lineTo(200,100)
+    ctx1.fill()   // 填充当前的路径区域，并闭合路径
+// 边框三角形
+    ctx1.beginPath()
+    ctx1.moveTo(220, 50)
+    ctx1.lineTo(220, 100)
+    ctx1.lineTo(270,100)
+    ctx1.closePath()   // 闭合当前路径
+    ctx1.stroke()
+
+//    画圆
+    function circle(){
+        var circle = document.querySelector('.circle')
+        var ctx = circle.getContext('2d')
+//        arc(x,y, radius,start,end, false)
+//   以(x,y)为圆心，radius为半径，默认情况下顺时针画圆
+//    start 画笔的开始位置，end:画笔的结束位置，默认以x轴为起点
+//正圆
+        ctx.arc(50,50,30,0, 2 * Math.PI )
+        ctx.stroke()
+        ctx.closePath()
+//        半圆
+        ctx.beginPath()
+        ctx.arc(130,50,30, 0, Math.PI)
+        ctx.stroke()
+//    1/4圆
+        ctx.beginPath()
+        ctx.arc(200, 30, 30, 0, Math.PI / 2)
+        ctx.stroke()
+//
+        ctx.beginPath()
+        ctx.arc(200, 110, 30, 0, Math.PI / 2, true)
+//        ctx.closePath()
+        ctx.stroke()
+    }
+    circle()
+//   按步骤画圆
+    function cc2()
+    {
+        var ctx = document.querySelector('.cc2').getContext('2d')
+//        ctx.arc(x,50,30,0,Math.PI/4 * 1)
+
+//        ctx.beginPath()
+//        ctx.arc(50,50,30,0,(Math.PI / 2 ) * 3  ,true)
+//        ctx.stroke()
+//  50
+//        ctx.beginPath()
+//        ctx.arc(120,50,30,0,(Math.PI ) ,true)
+//        ctx.stroke()
+//  50 + 60 + 10
+//        ctx.beginPath()
+//        ctx.arc(190,50,30,0,(Math.PI/2)  ,true)
+//        ctx.stroke()
+// 50 + 60 + 10 + 60 + 10
+//        ctx.beginPath()
+//        ctx.arc(260,50,30,0,Math.PI * 2  ,true)
+//        ctx.stroke()
+// 50 + 60 + 10 + 60  + 10 + 60 + 10
+
+//        圆心坐标  = 初始位置 + 直径 + 空隙
+        var x = 50
+        var hu = 2 * Math.PI
+        var y = 50
+        var radius = 10
+        var start = 0
+        var end
+        for( var i = 1; i < 9; i++ ){
+            x = 50 +  (i - 1) * ( radius * 2 + 10 )
+
+            end = ( hu / 8 ) * i
+            ctx.beginPath()
+            ctx.arc(x,y,radius,start,end)
+            ctx.strokeStyle = 'red'  // 边框颜色
+            ctx.stroke()
+            ctx.fillStyle = "red"  // 填充颜色
+
+            if( i % 2 != 0  ){
+                ctx.fillStyle = "red"
+            } else {
+                ctx.fillStyle = "blue"
+
+            }
+
+            ctx.fill()
+        }
+
+    }
+    cc2()
+</script>
+</body>
+</html>

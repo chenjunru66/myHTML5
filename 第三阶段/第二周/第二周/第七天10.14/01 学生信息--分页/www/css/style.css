@@ -1,0 +1,12 @@
+table,td,tr,th{
+    border:solid 1px #000; border-collapse: collapse;
+}
+th{
+    padding:10px 20px;
+}
+td{
+    padding:10px 20px;
+}
+a{
+    margin-right:25px;
+}

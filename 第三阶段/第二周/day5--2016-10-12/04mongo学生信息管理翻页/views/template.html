@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .wrapper{
+            width: 800px;
+            margin: 0 auto;
+        }
+        table{
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td{
+            width: 150px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="header1">
+        <h2>学生信息管理</h2>
+        <button type="button" id="add"onclick="location.href='login.html'">添加</button>
+    </div>
+    <div class="main1">
+        <table border="1">
+            {{if datas}}
+    <tr>
+        <th>姓名</th>
+        <th>学号</th>
+        <th>性别</th>
+        <th>邮箱</th>
+        <th>个人介绍</th>
+        <th>操作</th>
+    </tr>
+            {{each datas as data index}}
+    <tr>
+        <td>{{data.name}}</td>
+        <td>{{data.num}}</td>
+        <td>{{data.sex}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.message}}</td>
+        <td>
+            <button class="xiu" onclick="location.href='/update/{{data.id}}'" type="button" uid="{{data.id}}">修改</button>
+            <button class="shan" type="button" uid="{{data.id}}">删除</button>
+        </td>
+    </tr>
+       {{/each}}
+            {{/if}}
+        </table>
+        <p>
+            <a href="/{{page>1?page-1:1}}">上一页</a>
+            <!--如果page< pageTotal(总页数)：page?pageTotal-->
+            <span class="num"></span>
+            <a href="/{{page<pageTotal?page+1:pageTotal}}">下一页</a>
+        </p>
+    </div>
+
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/template.js"></script>
+<script src="script/index.js"></script>
+
+<script>
+    // var mn =''
+    // for(var i =1;i <="{{pageTotal}}";i++){
+    //     mn +="<a href='/" +i +"'>"+i+'</a>'
+    // }
+    // $('.num').html(mn)
+    // console.log(mn)
+    
+    // 显示3个页码数---第一种：123，234，345，456当前页码始终在最左侧，第二种：当前页码始终在中间位置  
+    var page ={{page}}//当前页码
+    var pages = [page]    //显示的页码数
+    var left = page
+    var right = page
+    // while()循环
+    
+    while(right < {{pageTotal}} && pages.length < 3 ){
+        right = ++left
+        pages.push(right)
+        
+        
+    }
+    console.log(pages)
+    var mn=''
+     for(var i =1;i <= pages.length;i++){
+        mn +="<a href='/" +i +"'>"+i+'</a>'
+    }
+    $('.num').html(mn)
+    
+</script>
+
+</body>
+</html>

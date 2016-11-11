@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>留言板首页</title>
+    <style>
+        span{
+            font-weight: normal;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/template.js"></script>
+</head>
+<body>
+   <header>
+       <button type="button"onclick="location.href = 'login.html'">登录</button>
+       <button type="button"onclick="location.href = 'register.html'">注册新用户</button>
+   </header>
+<p><button type="button"id="btn">我要留言</button></p>
+   <h1>留言板内容</h1>
+   <article>
+
+   </article>
+
+
+   <script type="text/html" id="template">
+   <h4>{{title}}</h4>
+    {{each data as datas index}}
+           <h5>{{datas.message}}</h5>
+           <p>{{datas.username}}</p>
+       {{/each}}
+   </script>
+   <script src="js/index.js"></script>
+</body>
+</html>

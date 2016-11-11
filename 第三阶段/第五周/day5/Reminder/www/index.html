@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="author" content="范珍珍">
+        <title>备忘录</title>
+        <link rel="stylesheet" href="css/share.css">
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <nav>
+            <h1>备忘录</h1>
+            <a href="add.html">+</a>
+        </nav>
+        <main>
+
+        </main>
+    </body>
+</html>
+<script id="reminds" type="text/html">
+{{each arr as item}}
+        <section>
+            <h3>{{item.title}}</h3>
+            <P>{{item.content}}</P>
+            <time>{{item.date |dateToString}}</time>
+        </section>
+{{/each}}
+</script>
+<script src="js/libs/require.js" data-main="js/index.js"></script>
+<!--
+1.页面===>view+model
+2.定义一个视图类，一个模型类
+3.这个页面需要一个结婚作为模型类(这个页面对应多条备忘数据)
+4.页面初始化的时候，需要获取数据，渲染页面，需要在initialize方法中调用this.model.fetch()获取数据(需要设置url和parse)
+在fetch的回调函数中渲染页面，也就是调用render()方法
+采用art-template模板化方法渲染页面，添加模板辅助函数，去过滤日期数据
+-->

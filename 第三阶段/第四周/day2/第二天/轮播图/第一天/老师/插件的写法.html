@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> 插件的写法 </title>
+    <style>
+        div{
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+    <section>
+
+    </section>
+<script src="js/jquery.js"></script>
+<script>
+//    console.log($)    // function jquery()
+//    console.log( $() )  // object
+//    console.log( $.extend() )   // object
+//    console.log( $.fn )  //  jquery对象 有属性，有方法
+
+//$.fn.swim = function(){
+//    console.log('111')
+//}
+//console.log($.fn )
+//$().swim()
+// $.extend()  == 合并参数以及参数值
+//    console.log($.extend({
+//        name:'yh',
+//        age:10,
+//        sex:'femail'
+//    },{
+//        name:'han',
+//        age:'15',
+//        htmls:'HTML5'
+//    }) )   // name:'han', age:15， sex:femail, htmls:html5
+
+
+
+//$.fn.myswim = function(options){
+//    var defaults = {
+//        width:200,
+//        height:200,
+//        background:'red'
+//    }
+//    var settings = $.extend(defaults, options)
+//    console.log( settings )
+////    console.log( $(this) )   // 当前调用方法的jquery对象
+//    $(this).css(settings)
+//}
+//
+//
+//$('div').myswim({
+//    width:100,
+//    height:100,
+//    background:'#000',
+//    transform:'rotate(30deg)'
+//})
+//$('section').myswim()
+//$('div').myswim()
+//   $('div').click(function(){
+//        console.log($(this))
+//    })
+
+//function obj(name,value){
+//    this.name = name;
+//    this.value = value
+//}
+//    var obj1 = new obj('yh', 'html5')
+
+//function obj2(options){
+//    return options
+//}
+//var obj4 =  obj2(  {name:'yh', age:10, sex:'femail'}  )
+//var obj2 = function(options){
+//    return options
+//}
+//    var obj3 = obj2(  {name:'yh', value:'10'}  )
+//
+//    console.log(obj3)
+
+$.fn.swim = function(options, spes){
+    var defs = {
+        width:300,
+        height:300,
+        background:'red',
+        left:0
+    }
+    var sets = $.extend(defs, options)
+    $(this).css(sets)
+//    console.log(defs.left)
+//    console.log( spes.left )
+    $(this).animate(spes, 1000)
+
+}
+    $('div').swim({ left:200 }, {left:1000})
+
+
+</script>
+</body>
+</html>

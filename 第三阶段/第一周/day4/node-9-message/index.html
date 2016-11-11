@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>art-template基本语法</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<article>
+
+</article>
+
+<script id="text"type="text/html">
+   {{if lessons.length == 0}}
+     <p>没有推荐的课程</p>
+    {{else}}
+           <h4>{{title}}</h4>
+           {{each lessons as lesson index}}
+           <section>
+               <p>{{lesson.name}}</p>
+               <p>{{lesson.teacher}}</p>
+               <p>{{lesson.price}}</p>
+           </section>
+
+    {{/each}}
+    {{/if}}
+</script>
+
+<script>
+    var datas ={
+        title:推荐的课程,
+        lessons:[
+            {    name:'HTML5',
+                teacher:'yan',
+                price:16000  } ,
+            {    name:'PHP',
+                teacher:'lao',
+                price:16000  } ,
+            {    name:'JAVA',
+                teacher:'yan',
+                price:16000  } ,
+        ]
+    }
+    var html = template('text',datas)
+    $('article').html(html)
+
+</script>
+</body>
+</html>

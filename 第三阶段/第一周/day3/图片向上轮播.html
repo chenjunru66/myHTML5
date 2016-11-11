@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>图片向上轮播</title>
+    <script src="js/jquery.js"></script>
+    <style>
+      body{
+          margin: 0;
+      }
+      ul{
+          list-style: none;
+          margin: 0;
+          padding: 0;
+      }
+        .wrapper{
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        .box{
+            width: 500px;
+            height:280px ;
+            position: relative;
+            overflow: hidden;
+        }
+        .pic{
+            width: 500px;
+            height: 1500px;
+            position: absolute;
+        }
+        .count{
+            position: absolute;
+            bottom: 10px;
+            z-index: 10;
+            right: 10px;
+        }
+        .count li{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+            text-align: center;
+            cursor: pointer;
+        }
+      .current {
+          background: yellow !important;
+          color: black !important;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="box">
+            <ul class="pic">
+                <li><img src="imgs/1.jpg" alt=""/></li>
+                <li><img src="imgs/2.jpg" alt=""/></li>
+                <li><img src="imgs/3.jpg" alt=""/></li>
+                <li><img src="imgs/4.jpg" alt=""/></li>
+                <li><img src="imgs/5.jpg" alt=""/></li>
+            </ul>
+            <ul class="count">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+
+
+    </div>
+
+
+    <script src="js/lunbo.js"></script>
+    <script>
+        $(function () {
+            $('.wrapper').slides({
+                boxClass:'box',
+                countClass:'count',
+                picClass:'pic',
+                speed:2000,
+                delay:1000,
+                current:'current'
+            })
+        })
+
+    </script>
+</body>
+</html>

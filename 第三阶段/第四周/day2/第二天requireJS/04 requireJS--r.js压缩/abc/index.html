@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RequireJS模块化</title>
+    <!-- requireJS --- 浏览器端模块化的工具 -->
+    <!--
+        加载require.js的时候，会默认查找其程序的主入口文件(data-main)
+        加载当前这个文件
+        data-main属性:规定了程序的主入口文件(默认名为main,可自定义)
+        文件不需要加.js后缀，在requireJS中，默认加载的是js文件
+    -->
+
+    <script src="require.js" data-main="main"></script>
+    <!--
+        加载requireJS的时候，
+        会默认生成script标签，并加载当前js文件
+        async:异步加载
+    -->
+</head>
+<body>
+<span> 这是网站页面内容 </span>
+</body>
+</html>

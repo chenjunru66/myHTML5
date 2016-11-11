@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>art-template模板使用方法</title>
+    <script src="jquery.js"></script>
+    <script src="template.js"></script>
+</head>
+<body>
+   <article>
+
+   </article>
+
+   <!--id当前标签的标志，template根据id名选择标签(模板)-->
+   <!--
+   template.js语法结构   {{变量名称}}
+
+       条件判断：
+       if --- /if
+       if --- else --- /if
+       if --- else if --- else --- /if
+
+       each arrayName as  value     index
+            数组名称  as  数组元素名称  索引值
+       /each
+
+
+
+       -->
+
+   <script id="text" type="text/html">
+       {{if books.length == 0}}
+       <h1>没有推荐的书目</h1>
+       {{else}}
+       <h1>{{title}}</h1>
+       {{each books as book index}}
+       <section>
+           <h4>{{book.name}}</h4>
+           <p>{{book.price | price }}</p>
+           <p>{{book.author}}</p>
+       </section>
+       {{/each}}
+       {{/if}}
+
+
+
+   </script>
+
+
+   <script>
+       <!--模板的辅助方法，para1--方法名称，-->
+       template.helper('price',function(price){
+           return '￥' + price.toFixed(2)
+       })
+   </script>
+
+<!--假设服务器返回了一组JSON数据，把数据转化为HTML页面-->
+
+<script>
+
+    var datas ={
+        title:'推荐的书目',
+        books:[
+            {
+                name:'HTML5权威指南',
+                price:99,
+                author:'未知'
+            },
+            {
+                name:'CSS3权威指南',
+                price:99,
+                author:'未知'
+            },
+            {
+                name:'JAVASCRIPT权威指南',
+                price:99,
+                author:'未知'
+            }
+        ]
+    }
+
+//    template(template_name,data数据)
+//    结合模板和数据，构成HTML页面
+    var html = template('text',datas)
+    $('article').html(html)
+</script>
+   <script>
+//       var books = datas.books
+//       if(books.length == 0){
+//           $('article').html('没有推荐的书目')
+//       }else{
+//           var html = ''
+//           $.each(books,function(ins){
+////               console.log(ins)
+//               html += '<section>'
+//               html += '<h4>' +  books[ins].name  + '</h4>'
+//               html += '<p>' + books[ins].price + '</p>'
+//               html += '<p>' + books[ins].author + '</p>'
+//               html += '</section>'
+//
+//
+//           })
+//           $('article').html(html)
+//       }
+
+
+
+
+
+   </script>
+</body>
+</html>

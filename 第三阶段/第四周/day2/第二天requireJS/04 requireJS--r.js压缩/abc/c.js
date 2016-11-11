@@ -1,0 +1,1 @@
+define(["exports"],function(n){function i(n){this.name=n,alert(n+"running")}alert("c is running");var e="c is now";n.shows=i,n.c=e});

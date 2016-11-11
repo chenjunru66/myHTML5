@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ES6使用class继承</title>
+</head>
+<body>
+<script>
+    <!--原来创建构造函数及原型方法的方法-->
+    function student(name,age){
+        this.name = name
+        this.age = age
+    }
+    student.prototype.sing = function(){
+        alert(this.name + '会唱歌')
+    }
+
+//    function ss(color){
+//        student.call()
+//    }
+
+
+//    ES6中的方法--使用class
+    class Animals{
+        constructor(name){
+            this.name = name
+        }
+        run(){
+            alert(this.name + '会逃跑')
+        }
+    }
+
+//    var cat = new Animals('大猫')
+//    console.log(cat)
+//     cat.run()
+
+    class dog extends Animals{//dog的原型对象来自于Aniamls
+        constructor(name,color){
+            super(name)    //调用父类元素的构造函数
+            this.color = color
+
+        }
+        drink(){
+            alert('会喝水')
+        }
+    }
+    var dogs = new dog('大黄','yellow')
+    console.log(dogs)
+//    dogs.drink()
+
+
+    function aa(name,age){
+        this.name = name
+        this.age = age
+    }
+    var bb = new aa('cjr',22)
+    console.log(bb)
+    var aa =
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\vscode\\nodejs\\node.exe',
+1 verbose cli   'D:\\vscode\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'require.js',
+1 verbose cli   '-g' ]
+2 info using npm@3.10.3
+3 info using node@v6.5.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData require.js
+8 silly fetchOtherPackageData require.js
+9 silly cache add args [ 'require.js', null ]
+10 verbose cache add spec require.js
+11 silly cache add parsed spec Result {
+11 silly cache add   raw: 'require.js',
+11 silly cache add   scope: null,
+11 silly cache add   escapedName: 'require.js',
+11 silly cache add   name: null,
+11 silly cache add   rawSpec: 'require.js',
+11 silly cache add   spec: 'E:\\H5八期\\第三阶段\\第四周\\第二天requireJS\\04 requireJS--r.js\\require.js',
+11 silly cache add   type: 'local' }
+12 silly addLocalTarball shasum (computed) cf9e41341e7ee43a571bc194ae899e2037e2b192
+13 verbose addTmpTarball E:\H5八期\第三阶段\第四周\第二天requireJS\04 requireJS--r.js\require.js not in flight; adding
+14 verbose correctMkdir C:\Users\Administrator\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+15 verbose addTmpTarball validating metadata from E:\H5八期\第三阶段\第四周\第二天requireJS\04 requireJS--r.js\require.js
+16 verbose tar unpack E:\H5八期\第三阶段\第四周\第二天requireJS\04 requireJS--r.js\require.js
+17 verbose tar unpacking to C:\Users\ADMINI~1\AppData\Local\Temp\npm-4636-ce285e4f\unpack-37529d52
+18 silly gentlyRm C:\Users\ADMINI~1\AppData\Local\Temp\npm-4636-ce285e4f\unpack-37529d52 is being purged
+19 verbose gentlyRm don't care about contents; nuking C:\Users\ADMINI~1\AppData\Local\Temp\npm-4636-ce285e4f\unpack-37529d52
+20 silly gunzTarPerm modes [ '777', '666' ]
+21 error not a package E:\H5八期\第三阶段\第四周\第二天requireJS\04 requireJS--r.js\require.js
+22 error addLocal Could not install E:\H5八期\第三阶段\第四周\第二天requireJS\04 requireJS--r.js\require.js
+23 silly fetchPackageMetaData Error: ENOENT: no such file or directory, open 'C:\Users\ADMINI~1\AppData\Local\Temp\npm-4636-ce285e4f\unpack-37529d52\package.json'
+23 silly fetchPackageMetaData     at Error (native)
+23 silly fetchPackageMetaData  error for require.js { Error: ENOENT: no such file or directory, open 'C:\Users\ADMINI~1\AppData\Local\Temp\npm-4636-ce285e4f\unpack-37529d52\package.json'
+23 silly fetchPackageMetaData     at Error (native)
+23 silly fetchPackageMetaData   errno: -4058,
+23 silly fetchPackageMetaData   code: 'ENOENT',
+23 silly fetchPackageMetaData   syscall: 'open',
+23 silly fetchPackageMetaData   path: 'C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\npm-4636-ce285e4f\\unpack-37529d52\\package.json' }
+24 silly rollbackFailedOptional Starting
+25 silly rollbackFailedOptional Finishing
+26 silly runTopLevelLifecycles Starting
+27 silly runTopLevelLifecycles Finishing
+28 silly install printInstalled
+29 verbose stack Error: ENOENT: no such file or directory, open 'C:\Users\ADMINI~1\AppData\Local\Temp\npm-4636-ce285e4f\unpack-37529d52\package.json'
+29 verbose stack     at Error (native)
+30 verbose cwd E:\H5八期\第三阶段\第四周\第二天requireJS\04 requireJS--r.js
+31 error Windows_NT 6.1.7601
+32 error argv "D:\\vscode\\nodejs\\node.exe" "D:\\vscode\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "require.js" "-g"
+33 error node v6.5.0
+34 error npm  v3.10.3
+35 error path C:\Users\ADMINI~1\AppData\Local\Temp\npm-4636-ce285e4f\unpack-37529d52\package.json
+36 error code ENOENT
+37 error errno -4058
+38 error syscall open
+39 error enoent ENOENT: no such file or directory, open 'C:\Users\ADMINI~1\AppData\Local\Temp\npm-4636-ce285e4f\unpack-37529d52\package.json'
+40 error enoent ENOENT: no such file or directory, open 'C:\Users\ADMINI~1\AppData\Local\Temp\npm-4636-ce285e4f\unpack-37529d52\package.json'
+40 error enoent This is most likely not a problem with npm itself
+40 error enoent and is related to npm not being able to find a file.
+41 verbose exit [ -4058, true ]

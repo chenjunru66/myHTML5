@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<h1> {{title}} </h1>
+<button type="button" onclick="location.href='add.html'"> 添加留言信息 </button>
+<table>
+    <tr>
+        <th> 姓名 </th>
+        <th> 年龄 </th>
+        <th> 联系方式 </th>
+        <th> 邮箱 </th>
+        <th> 操作 </th>
+    </tr>
+    {{each datas as data}}
+    <tr>
+        <td> {{data.name}} </td>
+        <td> {{data.age}} </td>
+        <td> {{data.phone}} </td>
+        <td> {{data.email}} </td>
+        <td>
+            <button type="button" onclick="location.href='/update/{{data.id}}'" > 更新 </button>
+            <button type="button" data-id="{{data.id}}" class="remove"> 删除 </button>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="scripts/remove.js"></script>
+</html>
